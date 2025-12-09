@@ -1,7 +1,9 @@
+import { useState, useCallback } from "react";
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useFavorites } from "@/hooks/useFavorites";
 import { movies, Movie } from "@/data/movies";
+import { MovieSearch } from "./MovieSearch";
 
 const MovieCard = ({ movie, isFavorite, onToggleFavorite }: { 
   movie: Movie; 
@@ -60,12 +62,17 @@ const MovieCard = ({ movie, isFavorite, onToggleFavorite }: {
 
 export const MovieGrid = () => {
   const { isFavorite, toggleFavorite } = useFavorites();
+  const [filteredMovies, setFilteredMovies] = useState<Movie[]>(movies);
+
+  const handleFilteredMovies = useCallback((movies: Movie[]) => {
+    setFilteredMovies(movies);
+  }, []);
 
   return (
     <section id="cartelera" className="py-20 lg:py-28 border-t border-hairline">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="flex items-end justify-between mb-12">
+        <div className="flex items-end justify-between mb-8">
           <div className="space-y-2">
             <span className="text-xs font-sans uppercase tracking-[0.2em] text-gold">
               Colección
@@ -74,35 +81,32 @@ export const MovieGrid = () => {
               Cartelera
             </h2>
           </div>
-          <Link
-            to="/"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors font-light hidden md:block"
-          >
-            Ver todo →
-          </Link>
+        </div>
+
+        {/* Search and Filters */}
+        <div className="mb-12">
+          <MovieSearch onFilteredMovies={handleFilteredMovies} />
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
-          {movies.map((movie) => (
-            <MovieCard 
-              key={movie.id} 
-              movie={movie} 
-              isFavorite={isFavorite(movie.id)}
-              onToggleFavorite={() => toggleFavorite(movie.id)}
-            />
-          ))}
-        </div>
-
-        {/* Mobile link */}
-        <div className="mt-10 text-center md:hidden">
-          <Link
-            to="/"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors font-light"
-          >
-            Ver todo →
-          </Link>
-        </div>
+        {filteredMovies.length > 0 ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
+            {filteredMovies.map((movie) => (
+              <MovieCard 
+                key={movie.id} 
+                movie={movie} 
+                isFavorite={isFavorite(movie.id)}
+                onToggleFavorite={() => toggleFavorite(movie.id)}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-16">
+            <p className="text-muted-foreground text-lg">
+              No se encontraron películas con los filtros seleccionados.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

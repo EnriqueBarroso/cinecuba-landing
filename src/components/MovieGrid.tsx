@@ -107,14 +107,22 @@ export const MovieGrid = () => {
 
         {/* Grid */}
         {paginatedMovies.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
-            {paginatedMovies.map((movie) => (
-              <MovieCard 
-                key={movie.id} 
-                movie={movie} 
-                isFavorite={isFavorite(movie.id)}
-                onToggleFavorite={() => toggleFavorite(movie.id)}
-              />
+          <div 
+            key={currentPage}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8 animate-fade-in"
+          >
+            {paginatedMovies.map((movie, index) => (
+              <div 
+                key={movie.id}
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                <MovieCard 
+                  movie={movie} 
+                  isFavorite={isFavorite(movie.id)}
+                  onToggleFavorite={() => toggleFavorite(movie.id)}
+                />
+              </div>
             ))}
           </div>
         ) : (

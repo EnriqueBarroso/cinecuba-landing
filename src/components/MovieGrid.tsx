@@ -1,9 +1,12 @@
-import { useState, useCallback } from "react";
-import { Heart } from "lucide-react";
+import { useState, useCallback, useMemo } from "react";
+import { Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useFavorites } from "@/hooks/useFavorites";
 import { movies, Movie } from "@/data/movies";
 import { MovieSearch } from "./MovieSearch";
+import { Button } from "@/components/ui/button";
+
+const MOVIES_PER_PAGE = 6;
 
 const MovieCard = ({ movie, isFavorite, onToggleFavorite }: { 
   movie: Movie; 
@@ -63,10 +66,24 @@ const MovieCard = ({ movie, isFavorite, onToggleFavorite }: {
 export const MovieGrid = () => {
   const { isFavorite, toggleFavorite } = useFavorites();
   const [filteredMovies, setFilteredMovies] = useState<Movie[]>(movies);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const handleFilteredMovies = useCallback((movies: Movie[]) => {
     setFilteredMovies(movies);
+    setCurrentPage(1); // Reset to first page when filters change
   }, []);
+
+  const totalPages = Math.ceil(filteredMovies.length / MOVIES_PER_PAGE);
+
+  const paginatedMovies = useMemo(() => {
+    const startIndex = (currentPage - 1) * MOVIES_PER_PAGE;
+    return filteredMovies.slice(startIndex, startIndex + MOVIES_PER_PAGE);
+  }, [filteredMovies, currentPage]);
+
+  const goToPage = (page: number) => {
+    setCurrentPage(page);
+    document.getElementById("cartelera")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section id="cartelera" className="py-20 lg:py-28 border-t border-hairline">
@@ -89,9 +106,9 @@ export const MovieGrid = () => {
         </div>
 
         {/* Grid */}
-        {filteredMovies.length > 0 ? (
+        {paginatedMovies.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
-            {filteredMovies.map((movie) => (
+            {paginatedMovies.map((movie) => (
               <MovieCard 
                 key={movie.id} 
                 movie={movie} 
@@ -105,6 +122,49 @@ export const MovieGrid = () => {
             <p className="text-muted-foreground text-lg">
               No se encontraron películas con los filtros seleccionados.
             </p>
+          </div>
+        )}
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-2 mt-12">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => goToPage(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="text-muted-foreground hover:text-foreground hover:bg-secondary disabled:opacity-30"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+
+            <div className="flex items-center gap-1">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <Button
+                  key={page}
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => goToPage(page)}
+                  className={`w-10 h-10 ${
+                    currentPage === page
+                      ? "bg-gold text-primary-foreground hover:bg-gold/90"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  }`}
+                >
+                  {page}
+                </Button>
+              ))}
+            </div>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => goToPage(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="text-muted-foreground hover:text-foreground hover:bg-secondary disabled:opacity-30"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </Button>
           </div>
         )}
       </div>

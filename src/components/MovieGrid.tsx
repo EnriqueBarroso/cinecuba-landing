@@ -1,12 +1,27 @@
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
 import { Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useFavorites } from "@/hooks/useFavorites";
 import { movies, Movie } from "@/data/movies";
 import { MovieSearch } from "./MovieSearch";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const MOVIES_PER_PAGE = 6;
+
+const MovieCardSkeleton = () => {
+  return (
+    <div className="animate-fade-in">
+      <div className="space-y-4">
+        <Skeleton className="aspect-[2/3] w-full bg-secondary" />
+        <div className="space-y-2">
+          <Skeleton className="h-5 w-3/4 bg-secondary" />
+          <Skeleton className="h-4 w-1/2 bg-secondary" />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const MovieCard = ({ movie, isFavorite, onToggleFavorite }: { 
   movie: Movie; 
@@ -67,11 +82,28 @@ export const MovieGrid = () => {
   const { isFavorite, toggleFavorite } = useFavorites();
   const [filteredMovies, setFilteredMovies] = useState<Movie[]>(movies);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate initial loading
+    const timer = setTimeout(() => setIsLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleFilteredMovies = useCallback((movies: Movie[]) => {
+    setIsLoading(true);
     setFilteredMovies(movies);
-    setCurrentPage(1); // Reset to first page when filters change
+    setCurrentPage(1);
+    // Simulate loading when filters change
+    setTimeout(() => setIsLoading(false), 300);
   }, []);
+
+  const handlePageChange = (page: number) => {
+    setIsLoading(true);
+    setCurrentPage(page);
+    document.getElementById("cartelera")?.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => setIsLoading(false), 300);
+  };
 
   const totalPages = Math.ceil(filteredMovies.length / MOVIES_PER_PAGE);
 
@@ -79,11 +111,6 @@ export const MovieGrid = () => {
     const startIndex = (currentPage - 1) * MOVIES_PER_PAGE;
     return filteredMovies.slice(startIndex, startIndex + MOVIES_PER_PAGE);
   }, [filteredMovies, currentPage]);
-
-  const goToPage = (page: number) => {
-    setCurrentPage(page);
-    document.getElementById("cartelera")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section id="cartelera" className="py-20 lg:py-28 border-t border-hairline">
@@ -106,7 +133,13 @@ export const MovieGrid = () => {
         </div>
 
         {/* Grid */}
-        {paginatedMovies.length > 0 ? (
+        {isLoading ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
+            {Array.from({ length: MOVIES_PER_PAGE }).map((_, index) => (
+              <MovieCardSkeleton key={index} />
+            ))}
+          </div>
+        ) : paginatedMovies.length > 0 ? (
           <div 
             key={currentPage}
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8 animate-fade-in"
@@ -139,8 +172,8 @@ export const MovieGrid = () => {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => goToPage(currentPage - 1)}
-              disabled={currentPage === 1}
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1 || isLoading}
               className="text-muted-foreground hover:text-foreground hover:bg-secondary disabled:opacity-30"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -152,7 +185,8 @@ export const MovieGrid = () => {
                   key={page}
                   variant="ghost"
                   size="sm"
-                  onClick={() => goToPage(page)}
+                  onClick={() => handlePageChange(page)}
+                  disabled={isLoading}
                   className={`w-10 h-10 ${
                     currentPage === page
                       ? "bg-gold text-primary-foreground hover:bg-gold/90"
@@ -167,8 +201,8 @@ export const MovieGrid = () => {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => goToPage(currentPage + 1)}
-              disabled={currentPage === totalPages}
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages || isLoading}
               className="text-muted-foreground hover:text-foreground hover:bg-secondary disabled:opacity-30"
             >
               <ChevronRight className="w-5 h-5" />

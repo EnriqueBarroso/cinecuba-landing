@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { z } from 'zod';
+import { ArrowLeft } from 'lucide-react';
 
 const authSchema = z.object({
   email: z.string().email('Correo electrónico inválido'),
@@ -86,13 +87,22 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-6">
+      {/* Back Button */}
+      <Link 
+        to="/" 
+        className="absolute top-6 left-6 flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+      >
+        <ArrowLeft className="w-4 h-4" />
+        <span className="text-sm font-light">Volver al inicio</span>
+      </Link>
+
       <div className="w-full max-w-md">
         {/* Logo */}
-        <a href="/" className="block text-center mb-12">
+        <Link to="/" className="block text-center mb-12">
           <span className="font-serif text-3xl font-semibold tracking-tight text-foreground">
             Cine<span className="text-gold">Cuba</span>
           </span>
-        </a>
+        </Link>
 
         {/* Auth Card */}
         <div className="bg-card border border-hairline p-8 md:p-10">

@@ -6,6 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useFavorites } from "@/hooks/useFavorites";
 import { Movie, getMovieById, getRelatedMovies } from "@/data/movies";
+import { getDirectorByName } from "@/data/directors";
 
 // Componente para tarjetas relacionadas (se mantiene igual, pero tipado)
 const RelatedMovieCard = ({ 
@@ -190,7 +191,19 @@ const MovieDetail = () => {
                   <span className="text-hairline">•</span>
                   <div className="flex items-center gap-2">
                     <Film className="w-4 h-4" />
-                    <span>{movie.director}</span>
+                    {(() => {
+                      const director = getDirectorByName(movie.director);
+                      return director ? (
+                        <Link 
+                          to={`/director/${director.id}`}
+                          className="hover:text-gold transition-colors"
+                        >
+                          {movie.director}
+                        </Link>
+                      ) : (
+                        <span>{movie.director}</span>
+                      );
+                    })()}
                   </div>
                 </div>
               </div>
@@ -221,7 +234,19 @@ const MovieDetail = () => {
               <div className="grid sm:grid-cols-2 gap-6 border-t border-hairline pt-8">
                 <div className="space-y-2">
                   <span className="text-xs uppercase tracking-wider text-gold">Director</span>
-                  <p className="text-foreground">{movie.director}</p>
+                  {(() => {
+                    const director = getDirectorByName(movie.director);
+                    return director ? (
+                      <Link 
+                        to={`/director/${director.id}`}
+                        className="block text-foreground hover:text-gold transition-colors"
+                      >
+                        {movie.director}
+                      </Link>
+                    ) : (
+                      <p className="text-foreground">{movie.director}</p>
+                    );
+                  })()}
                 </div>
                 <div className="space-y-2">
                   <span className="text-xs uppercase tracking-wider text-gold">Año</span>

@@ -209,12 +209,8 @@ const MovieDetail = () => {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Button variant="hero" size="lg" className="gap-2">
-                  <Play className="w-5 h-5" />
-                  Reproducir
-                </Button>
                 <Button 
-                  variant="heroOutline" 
+                  variant="hero"
                   size="lg" 
                   className="gap-2"
                   onClick={() => toggleFavorite(movie.id)}

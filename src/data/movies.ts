@@ -4,6 +4,10 @@ import posterChala from "@/assets/poster-Conducta.jpg";
 import posterSuite from "@/assets/poster-SuiteHabana.jpg";
 import posterMemoria from "@/assets/poster-Memoria.jpg";
 import posterMarti from "@/assets/poster-Marti.jpg";
+import poster12Sillas from "@/assets/12_sillas.jpg";
+import posterLosPajaros from "@/assets/los_pajaros.jpg";
+import posterSobrevivientes from "@/assets/sobrevivientes.jpg";
+import posterBurocrata from "@/assets/La-muerte-de-un-burocrata-poster.jpg";
 
 export interface Movie {
   id: string;
@@ -18,6 +22,7 @@ export interface Movie {
 }
 
 export const movies: Movie[] = [
+  // --- Películas Originales (Con imágenes locales) ---
   {
     id: "lucia-1968",
     title: "Lucía",
@@ -84,6 +89,48 @@ export const movies: Movie[] = [
     synopsis: "Una mirada íntima a la infancia y juventud de José Martí, el héroe nacional de Cuba. La película explora sus primeros años, su despertar político y los eventos que forjaron al hombre que se convertiría en símbolo de la independencia cubana.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
+
+  // --- Nuevas Películas (Con URLs de TMDB) ---
+  {
+    id: "pajaros-escopeta",
+    title: "Los pájaros tirándole a la escopeta",
+    year: 1984,
+    director: "Rolando Díaz",
+    genre: ["Comedia"],
+    poster: posterLosPajaros,
+    synopsis: "Dos jóvenes enamorados intentan impedir el romance entre el padre de él y la madre de ella. Una comedia clásica cubana que invierte los conflictos generacionales habituales.",
+    duration: "90 min"
+  },
+  {
+    id: "doce-sillas",
+    title: "Las doce sillas",
+    year: 1962,
+    director: "Tomás Gutiérrez Alea",
+    genre: ["Comedia"],
+    poster: poster12Sillas,
+    synopsis: "Un aristócrata venido a menos y su antiguo chófer buscan desesperadamente unos diamantes que fueron escondidos en una de las doce sillas de un juego de comedor antes de ser expropiadas.",
+    duration: "97 min"
+  },
+  {
+    id: "sobrevivientes",
+    title: "Los sobrevivientes",
+    year: 1979,
+    director: "Tomás Gutiérrez Alea",
+    genre: ["Drama"],
+    poster: posterSobrevivientes,
+    synopsis: "Una familia aristocrática decide encerrarse en su mansión creyendo que la Revolución será algo pasajero. Aislados del mundo, comienzan a involucionar hacia el salvajismo.",
+    duration: "130 min"
+  },
+  {
+    id: "muerte-burocrata",
+    title: "La muerte de un burócrata",
+    year: 1966,
+    director: "Tomás Gutiérrez Alea",
+    genre: ["Comedia"],
+    poster: posterBurocrata,
+    synopsis: "Sátira genial donde un sobrino intenta exhumar el cadáver de su tío para recuperar su carnet laboral, enfrentándose a un laberinto de trámites absurdos.",
+    duration: "85 min"
+  }
 ];
 
 export const getMovieById = (id: string): Movie | undefined => {

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Heart, Play, Calendar, Clock, Film } from "lucide-react";
+import { ArrowLeft, Heart, Play, Calendar, Clock, Film, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useFavorites } from "@/hooks/useFavorites";
 import { Movie, getMovieById, getRelatedMovies } from "@/data/movies";
 import { getDirectorByName } from "@/data/directors";
+import { useVideoByMovieId } from "@/hooks/useVideoCatalog";
 
 // Componente para tarjetas relacionadas (se mantiene igual, pero tipado)
 const RelatedMovieCard = ({ 
@@ -65,6 +66,7 @@ const RelatedMovieCard = ({
 const MovieDetail = () => {
   const { id } = useParams<{ id: string }>();
   const { isFavorite, toggleFavorite } = useFavorites();
+  const { data: videoInCatalog } = useVideoByMovieId(id);
   
   const [movie, setMovie] = useState<Movie | undefined>(undefined);
   const [relatedMovies, setRelatedMovies] = useState<Movie[]>([]);
@@ -209,12 +211,16 @@ const MovieDetail = () => {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Button variant="hero" size="lg" className="gap-2">
-                  <Play className="w-5 h-5" />
-                  Reproducir
-                </Button>
+                {videoInCatalog && (
+                  <Button variant="hero" size="lg" className="gap-2" asChild>
+                    <Link to={`/videoteca/${videoInCatalog.id}`}>
+                      <Play className="w-5 h-5" />
+                      Ver en Videoteca
+                    </Link>
+                  </Button>
+                )}
                 <Button 
-                  variant="heroOutline" 
+                  variant={videoInCatalog ? "heroOutline" : "hero"}
                   size="lg" 
                   className="gap-2"
                   onClick={() => toggleFavorite(movie.id)}
@@ -223,6 +229,16 @@ const MovieDetail = () => {
                   {favorite ? 'En favoritos' : 'Añadir a favoritos'}
                 </Button>
               </div>
+
+              {/* Badge if available in videoteca */}
+              {videoInCatalog && (
+                <div className="flex items-center gap-2 p-4 bg-gold/10 border border-gold/30 rounded-lg">
+                  <Video className="w-5 h-5 text-gold" />
+                  <span className="text-sm text-gold">
+                    Esta película está disponible para ver en la Videoteca
+                  </span>
+                </div>
+              )}
 
               <div className="space-y-4 border-t border-hairline pt-8">
                 <h2 className="font-serif text-2xl">Sinopsis</h2>

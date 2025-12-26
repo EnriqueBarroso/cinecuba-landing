@@ -1,7 +1,9 @@
 import humbertoSolasPhoto from "@/assets/directors/humberto-solas.jpg";
 import tomasGutierrezAleaPhoto from "@/assets/directors/tomas-gutierrez-alea.jpg";
+import juanCarlosTabioPhoto from "@/assets/directors/juan-carlos-tabio.jpg";
 import fernandoPerezPhoto from "@/assets/directors/fernando-perez.jpg";
 import ernestoDaranasPhoto from "@/assets/directors/ernesto-daranas.jpg";
+import miguelCoyulaPhoto from "@/assets/directors/miguel-coyula.jpg";
 
 export interface Director {
   id: string;
@@ -50,6 +52,7 @@ export const directors: Director[] = [
   {
     id: "juan-carlos-tabio",
     name: "Juan Carlos Tabío",
+    photo: juanCarlosTabioPhoto,
     birthYear: 1943,
     deathYear: 2021,
     nationality: "Cubano",
@@ -94,6 +97,7 @@ export const directors: Director[] = [
   {
     id: "miguel-coyula",
     name: "Miguel Coyula",
+    photo: miguelCoyulaPhoto,
     birthYear: 1977,
     nationality: "Cubano",
     biography: "Miguel Coyula representa la vanguardia del cine independiente cubano. Nacido en La Habana, es un cineasta autodidacta que desafía las convenciones del cine tradicional cubano. Su método de trabajo es único: escribe, dirige, fotografía, edita y compone la música de sus películas, a menudo trabajando durante años en proyectos que realiza casi en solitario. 'Memorias del Desarrollo' (2010), basada en la novela de Edmundo Desnoes (secuela de 'Memorias del Subdesarrollo'), le valió reconocimiento internacional por su audaz experimentación visual y narrativa. Coyula combina técnicas digitales innovadoras con una reflexión profunda sobre la identidad cubana, el exilio y la memoria. Su trabajo representa una nueva generación de cineastas cubanos que operan fuera de las estructuras tradicionales.",

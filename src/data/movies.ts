@@ -1,9 +1,9 @@
 import posterLucia from "@/assets/poster-lucia.jpg";
-import posterFresa from "@/assets/poster-fresa.jpg";
-import posterChala from "@/assets/poster-chala.jpg";
-import posterSuite from "@/assets/poster-suite.jpg";
-import posterBuena from "@/assets/poster-buena.jpg";
-import posterUltimo from "@/assets/poster-ultimo.jpg";
+import posterFresa from "@/assets/poster-FresayChocolate.jpg";
+import posterChala from "@/assets/poster-Conducta.jpg";
+import posterSuite from "@/assets/poster-SuiteHabana.jpg";
+import posterMemoria from "@/assets/poster-Memoria.jpg";
+import posterMarti from "@/assets/poster-Marti.jpg";
 
 export interface Movie {
   id: string;
@@ -63,25 +63,25 @@ export const movies: Movie[] = [
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
-    id: "buena-vista-1999",
-    title: "Los Músicos",
-    year: 1999,
-    director: "Wim Wenders",
-    poster: posterBuena,
-    duration: "105 min",
-    genre: ["Documental", "Musical"],
-    synopsis: "Un viaje musical a través de La Habana siguiendo a legendarios músicos cubanos que fueron redescubiertos después de décadas en el olvido. La película captura la magia de la música tradicional cubana, las historias de vida de estos artistas extraordinarios y la vibrante cultura de la isla. Una celebración de la música como forma de resistencia y alegría.",
+    id: "memoria-2022",
+    title: "Memorias del Desarrollo",
+    year: 2022,
+    director: "Miguel Coyula",
+    poster: posterMemoria,
+    duration: "112 min",
+    genre: ["Drama"],
+    synopsis: "Una exploración cinematográfica de la memoria, la identidad y el exilio cubano. La película sigue a un intelectual que reflexiona sobre su vida y las decisiones que lo llevaron al extranjero, mientras los recuerdos de Cuba se entrelazan con su presente.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
-    id: "ultimos-dias-2019",
-    title: "Últimos Días",
-    year: 2019,
+    id: "marti-2010",
+    title: "José Martí: El Ojo del Canario",
+    year: 2010,
     director: "Fernando Pérez",
-    poster: posterUltimo,
-    duration: "92 min",
+    poster: posterMarti,
+    duration: "120 min",
     genre: ["Drama", "Histórico"],
-    synopsis: "Una mirada íntima a los últimos días de la vida de José Martí, el héroe nacional de Cuba. La película explora sus pensamientos, sus miedos y su determinación mientras se prepara para la batalla final que costaría su vida. Un retrato humanizador del prócer que revela al hombre detrás del mito, sus contradicciones y su inquebrantable amor por la libertad de su patria.",
+    synopsis: "Una mirada íntima a la infancia y juventud de José Martí, el héroe nacional de Cuba. La película explora sus primeros años, su despertar político y los eventos que forjaron al hombre que se convertiría en símbolo de la independencia cubana.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 ];

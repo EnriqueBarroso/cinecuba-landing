@@ -11,8 +11,6 @@ import Eras from "@/pages/Eras";
 import EraDetail from "@/pages/EraDetail";
 import About from "@/pages/About";
 import NotFound from "@/pages/NotFound";
-import Videoteca from "@/pages/Videoteca";
-import VideoPlayer from "@/pages/VideoPlayer";
 
 export const AnimatedRoutes = () => {
   const location = useLocation();
@@ -73,22 +71,6 @@ export const AnimatedRoutes = () => {
           element={
             <PageTransition>
               <MovieDetail />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/videoteca"
-          element={
-            <PageTransition>
-              <Videoteca />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/videoteca/:id"
-          element={
-            <PageTransition>
-              <VideoPlayer />
             </PageTransition>
           }
         />

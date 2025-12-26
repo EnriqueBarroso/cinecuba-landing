@@ -1,11 +1,14 @@
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Heart, Play, Calendar, Clock, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { getMovieById, getRelatedMovies, Movie } from "@/data/movies";
 import { useFavorites } from "@/hooks/useFavorites";
+import { supabase } from "@/integrations/supabase/client";
+import { Movie } from "@/data/movies"; // Solo importamos la interfaz, no los datos
 
+// Componente para tarjetas relacionadas (se mantiene igual, pero tipado)
 const RelatedMovieCard = ({ 
   movie, 
   isFavorite, 
@@ -61,9 +64,82 @@ const RelatedMovieCard = ({
 
 const MovieDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const movie = id ? getMovieById(id) : undefined;
-  const relatedMovies = id ? getRelatedMovies(id, 4) : [];
   const { isFavorite, toggleFavorite } = useFavorites();
+  
+  // Estados para manejar la carga de datos
+  const [movie, setMovie] = useState<Movie | undefined>(undefined);
+  const [relatedMovies, setRelatedMovies] = useState<Movie[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Cargar la película desde Supabase
+  useEffect(() => {
+    const fetchMovie = async () => {
+      if (!id) return;
+      setLoading(true);
+
+      // 1. Obtener la película actual
+      const { data: movieData, error } = await supabase
+        .from("movies")
+        .select("*")
+        .eq("id", id)
+        .single();
+
+      if (error) {
+        console.error("Error fetching movie:", error);
+        setLoading(false);
+        return;
+      }
+
+      if (movieData) {
+        const mappedMovie: Movie = {
+          id: movieData.id,
+          title: movieData.title,
+          year: movieData.year,
+          director: movieData.director,
+          poster: movieData.poster,
+          synopsis: movieData.synopsis,
+          duration: movieData.duration,
+          genre: movieData.genre || [],
+          videoUrl: movieData.video_url || undefined,
+        };
+        setMovie(mappedMovie);
+
+        // 2. Obtener relacionadas (excluyendo la actual)
+        // Por simplicidad, traemos 4 cualquiera. Podrías filtrar por género.
+        const { data: relatedData } = await supabase
+          .from("movies")
+          .select("*")
+          .neq("id", id)
+          .limit(4);
+
+        if (relatedData) {
+          const mappedRelated = relatedData.map((m: any) => ({
+            id: m.id,
+            title: m.title,
+            year: m.year,
+            director: m.director,
+            poster: m.poster,
+            synopsis: m.synopsis,
+            duration: m.duration,
+            genre: m.genre || [],
+            videoUrl: m.video_url || undefined,
+          }));
+          setRelatedMovies(mappedRelated);
+        }
+      }
+      setLoading(false);
+    };
+
+    fetchMovie();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="animate-pulse text-gold">Cargando película...</div>
+      </div>
+    );
+  }
 
   if (!movie) {
     return (
@@ -88,7 +164,6 @@ const MovieDetail = () => {
       
       {/* Hero with Video */}
       <section className="relative pt-20">
-        {/* Video Player */}
         <div className="w-full aspect-video bg-secondary relative">
           {movie.videoUrl ? (
             <iframe
@@ -114,7 +189,6 @@ const MovieDetail = () => {
       {/* Movie Info */}
       <section className="py-12 lg:py-20">
         <div className="container mx-auto px-6 lg:px-12">
-          {/* Back button */}
           <Link 
             to="/" 
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
@@ -137,7 +211,6 @@ const MovieDetail = () => {
 
             {/* Details */}
             <div className="space-y-8">
-              {/* Header */}
               <div className="space-y-4">
                 <div className="flex flex-wrap gap-2">
                   {movie.genre.map((g) => (
@@ -172,7 +245,6 @@ const MovieDetail = () => {
                 </div>
               </div>
 
-              {/* Actions */}
               <div className="flex flex-wrap gap-4">
                 <Button variant="hero" size="lg" className="gap-2">
                   <Play className="w-5 h-5" />
@@ -189,7 +261,6 @@ const MovieDetail = () => {
                 </Button>
               </div>
 
-              {/* Synopsis */}
               <div className="space-y-4 border-t border-hairline pt-8">
                 <h2 className="font-serif text-2xl">Sinopsis</h2>
                 <p className="text-muted-foreground leading-relaxed text-lg font-light">
@@ -197,7 +268,6 @@ const MovieDetail = () => {
                 </p>
               </div>
 
-              {/* Technical Info */}
               <div className="grid sm:grid-cols-2 gap-6 border-t border-hairline pt-8">
                 <div className="space-y-2">
                   <span className="text-xs uppercase tracking-wider text-gold">Director</span>

@@ -1,5 +1,5 @@
-import { useState, useMemo } from "react";
-import { Search, X, ChevronDown } from "lucide-react";
+import { useState, useMemo, useEffect } from "react";
+import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,35 +9,39 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { movies, Movie } from "@/data/movies";
+// IMPORTANTE: Solo importamos el tipo, NO los datos
+import { Movie } from "@/data/movies";
 
 interface MovieSearchProps {
+  movies: Movie[]; // Nueva prop para recibir las películas reales
   onFilteredMovies: (movies: Movie[]) => void;
 }
 
-export const MovieSearch = ({ onFilteredMovies }: MovieSearchProps) => {
+export const MovieSearch = ({ movies, onFilteredMovies }: MovieSearchProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedGenre, setSelectedGenre] = useState<string>("all");
   const [selectedYear, setSelectedYear] = useState<string>("all");
   const [selectedDirector, setSelectedDirector] = useState<string>("all");
 
-  // Extract unique values for filters
+  // Calcular géneros únicos basados en las películas REALES (prop)
   const genres = useMemo(() => {
     const allGenres = movies.flatMap((movie) => movie.genre);
     return [...new Set(allGenres)].sort();
-  }, []);
+  }, [movies]);
 
+  // Calcular años únicos
   const years = useMemo(() => {
     const allYears = movies.map((movie) => movie.year);
     return [...new Set(allYears)].sort((a, b) => b - a);
-  }, []);
+  }, [movies]);
 
+  // Calcular directores únicos
   const directors = useMemo(() => {
     const allDirectors = movies.map((movie) => movie.director);
     return [...new Set(allDirectors)].sort();
-  }, []);
+  }, [movies]);
 
-  // Filter movies based on current filters
+  // Filtrar usando la prop 'movies'
   const filteredMovies = useMemo(() => {
     return movies.filter((movie) => {
       const matchesSearch =
@@ -57,10 +61,10 @@ export const MovieSearch = ({ onFilteredMovies }: MovieSearchProps) => {
 
       return matchesSearch && matchesGenre && matchesYear && matchesDirector;
     });
-  }, [searchQuery, selectedGenre, selectedYear, selectedDirector]);
+  }, [movies, searchQuery, selectedGenre, selectedYear, selectedDirector]);
 
-  // Update parent component when filters change
-  useMemo(() => {
+  // Notificar al padre cuando cambian los filtros
+  useEffect(() => {
     onFilteredMovies(filteredMovies);
   }, [filteredMovies, onFilteredMovies]);
 

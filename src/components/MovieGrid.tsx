@@ -2,7 +2,8 @@ import { useState, useCallback, useMemo, useEffect } from "react";
 import { Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useFavorites } from "@/hooks/useFavorites";
-import { movies, Movie } from "@/data/movies";
+import { useMovies } from "@/hooks/useMovies"; // Importamos el nuevo hook
+import { Movie } from "@/data/movies"; // Importamos solo el tipo Movie
 import { MovieSearch } from "./MovieSearch";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -23,8 +24,8 @@ const MovieCardSkeleton = () => {
   );
 };
 
-const MovieCard = ({ movie, isFavorite, onToggleFavorite }: { 
-  movie: Movie; 
+const MovieCard = ({ movie, isFavorite, onToggleFavorite }: {
+  movie: Movie;
   isFavorite: boolean;
   onToggleFavorite: () => void;
 }) => {
@@ -39,7 +40,7 @@ const MovieCard = ({ movie, isFavorite, onToggleFavorite }: {
           />
           <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors duration-300" />
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none glow-gold" />
-          
+
           <button
             onClick={(e) => {
               e.preventDefault();
@@ -48,16 +49,15 @@ const MovieCard = ({ movie, isFavorite, onToggleFavorite }: {
             }}
             className="absolute top-3 right-3 p-2 rounded-full bg-background/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-background/80"
           >
-            <Heart 
-              className={`w-4 h-4 transition-colors ${
-                isFavorite 
-                  ? 'fill-gold text-gold' 
+            <Heart
+              className={`w-4 h-4 transition-colors ${isFavorite
+                  ? 'fill-gold text-gold'
                   : 'text-foreground hover:text-gold'
-              }`} 
+                }`}
             />
           </button>
         </div>
-        
+
         <div className="mt-4 space-y-1">
           <div className="flex items-start justify-between gap-2">
             <h3 className="font-serif text-lg font-medium text-foreground group-hover:text-gold transition-colors duration-300">
@@ -80,31 +80,35 @@ const MovieCard = ({ movie, isFavorite, onToggleFavorite }: {
 
 export const MovieGrid = () => {
   const { isFavorite, toggleFavorite } = useFavorites();
-  const [filteredMovies, setFilteredMovies] = useState<Movie[]>(movies);
+  // Usamos el hook para obtener los datos reales
+  const { movies, loading: loadingMovies } = useMovies();
+
+  const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isFiltering, setIsFiltering] = useState(false);
 
+  // Cuando cargan las películas de Supabase, actualizamos la lista
   useEffect(() => {
-    // Simulate initial loading
-    const timer = setTimeout(() => setIsLoading(false), 800);
-    return () => clearTimeout(timer);
-  }, []);
+    if (movies.length > 0) {
+      setFilteredMovies(movies);
+    }
+  }, [movies]);
 
-  const handleFilteredMovies = useCallback((movies: Movie[]) => {
-    setIsLoading(true);
-    setFilteredMovies(movies);
+  const handleFilteredMovies = useCallback((filtered: Movie[]) => {
+    setIsFiltering(true);
+    setFilteredMovies(filtered);
     setCurrentPage(1);
-    // Simulate loading when filters change
-    setTimeout(() => setIsLoading(false), 300);
+    setTimeout(() => setIsFiltering(false), 300);
   }, []);
 
   const handlePageChange = (page: number) => {
-    setIsLoading(true);
+    setIsFiltering(true);
     setCurrentPage(page);
     document.getElementById("cartelera")?.scrollIntoView({ behavior: "smooth" });
-    setTimeout(() => setIsLoading(false), 300);
+    setTimeout(() => setIsFiltering(false), 300);
   };
 
+  const isLoading = loadingMovies || isFiltering;
   const totalPages = Math.ceil(filteredMovies.length / MOVIES_PER_PAGE);
 
   const paginatedMovies = useMemo(() => {
@@ -115,7 +119,6 @@ export const MovieGrid = () => {
   return (
     <section id="cartelera" className="py-20 lg:py-28 border-t border-hairline">
       <div className="container mx-auto px-6 lg:px-12">
-        {/* Section Header */}
         <div className="flex items-end justify-between mb-8">
           <div className="space-y-2">
             <span className="text-xs font-sans uppercase tracking-[0.2em] text-gold">
@@ -127,12 +130,15 @@ export const MovieGrid = () => {
           </div>
         </div>
 
+        {/* IMPORTANTE: MovieSearch probablemente necesite actualizarse también */}
         {/* Search and Filters */}
         <div className="mb-12">
-          <MovieSearch onFilteredMovies={handleFilteredMovies} />
+          <MovieSearch
+            movies={movies}  
+            onFilteredMovies={handleFilteredMovies}
+          />
         </div>
 
-        {/* Grid */}
         {isLoading ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
             {Array.from({ length: MOVIES_PER_PAGE }).map((_, index) => (
@@ -140,18 +146,18 @@ export const MovieGrid = () => {
             ))}
           </div>
         ) : paginatedMovies.length > 0 ? (
-          <div 
+          <div
             key={currentPage}
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8 animate-fade-in"
           >
             {paginatedMovies.map((movie, index) => (
-              <div 
+              <div
                 key={movie.id}
                 className="animate-fade-in"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <MovieCard 
-                  movie={movie} 
+                <MovieCard
+                  movie={movie}
                   isFavorite={isFavorite(movie.id)}
                   onToggleFavorite={() => toggleFavorite(movie.id)}
                 />
@@ -166,7 +172,6 @@ export const MovieGrid = () => {
           </div>
         )}
 
-        {/* Pagination */}
         {totalPages > 1 && (
           <div className="flex items-center justify-center gap-2 mt-12">
             <Button
@@ -187,11 +192,10 @@ export const MovieGrid = () => {
                   size="sm"
                   onClick={() => handlePageChange(page)}
                   disabled={isLoading}
-                  className={`w-10 h-10 ${
-                    currentPage === page
+                  className={`w-10 h-10 ${currentPage === page
                       ? "bg-gold text-primary-foreground hover:bg-gold/90"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                  }`}
+                    }`}
                 >
                   {page}
                 </Button>

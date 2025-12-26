@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useFavorites } from "@/hooks/useFavorites";
-import { supabase } from "@/integrations/supabase/client";
-import { Movie } from "@/data/movies"; // Solo importamos la interfaz, no los datos
+import { Movie, getMovieById, getRelatedMovies } from "@/data/movies";
 
 // Componente para tarjetas relacionadas (se mantiene igual, pero tipado)
 const RelatedMovieCard = ({ 
@@ -66,71 +65,22 @@ const MovieDetail = () => {
   const { id } = useParams<{ id: string }>();
   const { isFavorite, toggleFavorite } = useFavorites();
   
-  // Estados para manejar la carga de datos
   const [movie, setMovie] = useState<Movie | undefined>(undefined);
   const [relatedMovies, setRelatedMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Cargar la película desde Supabase
   useEffect(() => {
-    const fetchMovie = async () => {
-      if (!id) return;
-      setLoading(true);
-
-      // 1. Obtener la película actual
-      const { data: movieData, error } = await supabase
-        .from("movies")
-        .select("*")
-        .eq("id", id)
-        .single();
-
-      if (error) {
-        console.error("Error fetching movie:", error);
-        setLoading(false);
-        return;
-      }
-
-      if (movieData) {
-        const mappedMovie: Movie = {
-          id: movieData.id,
-          title: movieData.title,
-          year: movieData.year,
-          director: movieData.director,
-          poster: movieData.poster,
-          synopsis: movieData.synopsis,
-          duration: movieData.duration,
-          genre: movieData.genre || [],
-          videoUrl: movieData.video_url || undefined,
-        };
-        setMovie(mappedMovie);
-
-        // 2. Obtener relacionadas (excluyendo la actual)
-        // Por simplicidad, traemos 4 cualquiera. Podrías filtrar por género.
-        const { data: relatedData } = await supabase
-          .from("movies")
-          .select("*")
-          .neq("id", id)
-          .limit(4);
-
-        if (relatedData) {
-          const mappedRelated = relatedData.map((m: any) => ({
-            id: m.id,
-            title: m.title,
-            year: m.year,
-            director: m.director,
-            poster: m.poster,
-            synopsis: m.synopsis,
-            duration: m.duration,
-            genre: m.genre || [],
-            videoUrl: m.video_url || undefined,
-          }));
-          setRelatedMovies(mappedRelated);
-        }
-      }
-      setLoading(false);
-    };
-
-    fetchMovie();
+    if (!id) return;
+    
+    setLoading(true);
+    const foundMovie = getMovieById(id);
+    setMovie(foundMovie);
+    
+    if (foundMovie) {
+      setRelatedMovies(getRelatedMovies(id, 4));
+    }
+    
+    setLoading(false);
   }, [id]);
 
   if (loading) {

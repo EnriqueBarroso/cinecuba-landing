@@ -11,9 +11,9 @@ import {
 
 const navLinks = [
   { label: "Inicio", href: "/" },
-  { label: "Películas", href: "#cartelera" },
-  { label: "Directores", href: "#" },
-  { label: "Épocas", href: "#" },
+  { label: "Películas", href: "/peliculas" },
+  { label: "Directores", href: "/directores" },
+  { label: "Épocas", href: "/epocas" },
 ];
 
 export const Navbar = () => {

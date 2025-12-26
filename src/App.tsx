@@ -7,6 +7,9 @@ import { AuthProvider } from "@/hooks/useAuth";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import MovieDetail from "./pages/MovieDetail";
+import Movies from "./pages/Movies";
+import Directors from "./pages/Directors";
+import Eras from "./pages/Eras";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +23,9 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/peliculas" element={<Movies />} />
+            <Route path="/directores" element={<Directors />} />
+            <Route path="/epocas" element={<Eras />} />
             <Route path="/pelicula/:id" element={<MovieDetail />} />
             <Route path="/auth" element={<Auth />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

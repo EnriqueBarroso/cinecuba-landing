@@ -1,3 +1,8 @@
+import humbertoSolasPhoto from "@/assets/directors/humberto-solas.jpg";
+import tomasGutierrezAleaPhoto from "@/assets/directors/tomas-gutierrez-alea.jpg";
+import fernandoPerezPhoto from "@/assets/directors/fernando-perez.jpg";
+import ernestoDaranasPhoto from "@/assets/directors/ernesto-daranas.jpg";
+
 export interface Director {
   id: string;
   name: string;
@@ -14,6 +19,7 @@ export const directors: Director[] = [
   {
     id: "humberto-solas",
     name: "Humberto Solás",
+    photo: humbertoSolasPhoto,
     birthYear: 1941,
     deathYear: 2008,
     nationality: "Cubano",
@@ -28,6 +34,7 @@ export const directors: Director[] = [
   {
     id: "tomas-gutierrez-alea",
     name: "Tomás Gutiérrez Alea",
+    photo: tomasGutierrezAleaPhoto,
     birthYear: 1928,
     deathYear: 1996,
     nationality: "Cubano",
@@ -57,6 +64,7 @@ export const directors: Director[] = [
   {
     id: "fernando-perez",
     name: "Fernando Pérez",
+    photo: fernandoPerezPhoto,
     birthYear: 1944,
     nationality: "Cubano",
     biography: "Fernando Pérez Valdés es el poeta del cine cubano contemporáneo. Nacido en La Habana, estudió periodismo y posteriormente se formó como cineasta en el ICAIC. Su obra se caracteriza por una sensibilidad lírica excepcional y una capacidad única para capturar la esencia de la vida cotidiana cubana con profunda humanidad. 'Suite Habana' (2003), un documental casi sin diálogos que sigue la vida de habaneros comunes, es considerada su obra maestra y una de las películas cubanas más importantes del siglo XXI. También dirigió 'Madagascar' (1994), 'La vida es silbar' (1998) y 'José Martí: El ojo del canario' (2010), todas obras que exploran la identidad cubana con una mirada contemplativa y poética.",
@@ -71,6 +79,7 @@ export const directors: Director[] = [
   {
     id: "ernesto-daranas",
     name: "Ernesto Daranas",
+    photo: ernestoDaranasPhoto,
     birthYear: 1961,
     nationality: "Cubano",
     biography: "Ernesto Daranas Serrano es uno de los directores más importantes del cine cubano contemporáneo. Nacido en La Habana, comenzó su carrera como guionista y director de televisión antes de pasar al cine. Su película 'Conducta' (2014) se convirtió en un fenómeno cultural en Cuba, abordando con valentía temas como la educación, la marginación social y la burocracia. La película fue la más vista en la historia del cine cubano y recibió aclamación internacional. Daranas es conocido por su compromiso con historias que reflejan las realidades sociales de Cuba sin caer en el panfletarismo, combinando un realismo crudo con una profunda empatía por sus personajes. También ha dirigido 'Los dioses rotos' (2008) y 'Sergio y Serguéi' (2017).",

@@ -8,6 +8,7 @@ import Movies from "@/pages/Movies";
 import Directors from "@/pages/Directors";
 import DirectorDetail from "@/pages/DirectorDetail";
 import Eras from "@/pages/Eras";
+import EraDetail from "@/pages/EraDetail";
 import NotFound from "@/pages/NotFound";
 
 export const AnimatedRoutes = () => {
@@ -53,6 +54,14 @@ export const AnimatedRoutes = () => {
           element={
             <PageTransition>
               <Eras />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/epoca/:id"
+          element={
+            <PageTransition>
+              <EraDetail />
             </PageTransition>
           }
         />

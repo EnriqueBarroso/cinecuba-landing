@@ -6,6 +6,7 @@ import Auth from "@/pages/Auth";
 import MovieDetail from "@/pages/MovieDetail";
 import Movies from "@/pages/Movies";
 import Directors from "@/pages/Directors";
+import DirectorDetail from "@/pages/DirectorDetail";
 import Eras from "@/pages/Eras";
 import NotFound from "@/pages/NotFound";
 
@@ -36,6 +37,14 @@ export const AnimatedRoutes = () => {
           element={
             <PageTransition>
               <Directors />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/director/:id"
+          element={
+            <PageTransition>
+              <DirectorDetail />
             </PageTransition>
           }
         />

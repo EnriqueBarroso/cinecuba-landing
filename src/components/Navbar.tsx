@@ -12,7 +12,6 @@ import {
 const navLinks = [
   { label: "Inicio", href: "/" },
   { label: "Películas", href: "/peliculas" },
-  { label: "Videoteca", href: "/videoteca" },
   { label: "Directores", href: "/directores" },
   { label: "Épocas", href: "/epocas" },
 ];

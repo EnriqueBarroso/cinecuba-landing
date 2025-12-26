@@ -12,7 +12,7 @@ export const Footer = () => {
 
           {/* Links */}
           <div className="flex items-center gap-8 text-sm text-muted-foreground font-light">
-            <Link to="/videoteca" className="hover:text-foreground transition-colors">Videoteca</Link>
+            <Link to="/peliculas" className="hover:text-foreground transition-colors">Películas</Link>
             <Link to="/acerca" className="hover:text-foreground transition-colors">Acerca de</Link>
             <a href="#" className="hover:text-foreground transition-colors">Términos</a>
             <a href="#" className="hover:text-foreground transition-colors">Privacidad</a>

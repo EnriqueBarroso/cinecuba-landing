@@ -41,6 +41,15 @@ const movies1960s: Movie[] = [
     duration: "97 min",
     genre: ["Comedia"],
     synopsis: "Un aristócrata venido a menos y su antiguo chófer buscan desesperadamente unos diamantes que fueron escondidos en una de las doce sillas de un juego de comedor antes de ser expropiadas.",
+    awards: [
+      { name: "Festival de Karlovy Vary", year: 1963, category: "Mención Especial" }
+    ],
+    cast: [
+      { name: "Enrique Santiesteban", role: "Hipólito" },
+      { name: "Reinaldo Miravalles", role: "Óscar" },
+      { name: "René Sánchez", role: "Padre Cirilo" },
+      { name: "Pilín Vallejo", role: "La viuda" }
+    ]
   },
   {
     id: "muerte-burocrata",
@@ -51,6 +60,17 @@ const movies1960s: Movie[] = [
     duration: "85 min",
     genre: ["Comedia"],
     synopsis: "Sátira genial donde un sobrino intenta exhumar el cadáver de su tío para recuperar su carnet laboral, enfrentándose a un laberinto de trámites absurdos.",
+    awards: [
+      { name: "Festival de Karlovy Vary", year: 1966, category: "Premio Especial del Jurado" },
+      { name: "Festival de Moscú", year: 1967, category: "Mención Especial" }
+    ],
+    cast: [
+      { name: "Salvador Wood", role: "El sobrino" },
+      { name: "Silvia Planas", role: "La tía" },
+      { name: "Manuel Estanillo", role: "El burócrata" },
+      { name: "Gaspar de Santelices", role: "El enterrador" }
+    ],
+    notes: "Incluye homenajes visuales a Laurel y Hardy, Buñuel y otros maestros del cine."
   },
   {
     id: "lucia-1968",
@@ -60,8 +80,21 @@ const movies1960s: Movie[] = [
     poster: posterLucia,
     duration: "160 min",
     genre: ["Drama", "Histórico"],
-    synopsis: "Una obra maestra del cine cubano que narra tres historias de mujeres llamadas Lucía en tres momentos cruciales de la historia de Cuba: la guerra de independencia de 1895, la lucha contra Machado en los años 30, y la Revolución de los años 60. Cada segmento explora las luchas, pasiones y transformaciones de estas mujeres, reflejando los cambios sociales y políticos de la isla a través de sus experiencias personales.",
+    synopsis: "Una obra maestra del cine cubano que narra tres historias de mujeres llamadas Lucía en tres momentos cruciales de la historia de Cuba: la guerra de independencia de 1895, la lucha contra Machado en los años 30, y la Revolución de los años 60.",
     trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    awards: [
+      { name: "Festival de Moscú", year: 1969, category: "Gran Premio" },
+      { name: "Festival de Karlovy Vary", year: 1969, category: "Mejor Película" }
+    ],
+    cast: [
+      { name: "Raquel Revuelta", role: "Lucía (1895)" },
+      { name: "Eslinda Núñez", role: "Lucía (1932)" },
+      { name: "Adela Legrá", role: "Lucía (196...)" },
+      { name: "Eduardo Moure", role: "Rafael" },
+      { name: "Ramón Brito", role: "Aldo" },
+      { name: "Adolfo Llauradó", role: "Tomás" }
+    ],
+    notes: "Considerada una de las obras maestras del cine latinoamericano."
   },
 ];
 
@@ -79,6 +112,17 @@ const movies1970s: Movie[] = [
     duration: "130 min",
     genre: ["Drama"],
     synopsis: "Una familia aristocrática decide encerrarse en su mansión creyendo que la Revolución será algo pasajero. Aislados del mundo, comienzan a involucionar hacia el salvajismo.",
+    awards: [
+      { name: "Festival de San Sebastián", year: 1979, category: "Premio Especial del Jurado" }
+    ],
+    cast: [
+      { name: "Enrique Santiesteban", role: "Sebastián" },
+      { name: "Reynaldo Miravalles", role: "Olegario" },
+      { name: "Germán Pinelli", role: "Ramiro" },
+      { name: "Ana Viña", role: "María" },
+      { name: "Vicente Revuelta", role: "Fernando" }
+    ],
+    notes: "Alegoría sobre la resistencia al cambio y la decadencia de la clase burguesa."
   },
 ];
 
@@ -96,6 +140,16 @@ const movies1980s: Movie[] = [
     duration: "90 min",
     genre: ["Comedia"],
     synopsis: "Dos jóvenes enamorados intentan impedir el romance entre el padre de él y la madre de ella. Una comedia clásica cubana que invierte los conflictos generacionales habituales.",
+    awards: [
+      { name: "Festival de Comedia de Peñíscola", year: 1985, category: "Mejor Película" }
+    ],
+    cast: [
+      { name: "Luis Alberto García", role: "Carlos" },
+      { name: "Thais Valdés", role: "Ofelia" },
+      { name: "Daisy Granados", role: "La madre" },
+      { name: "César Évora", role: "El padre" }
+    ],
+    notes: "Una de las comedias cubanas más populares de la década."
   },
 ];
 
@@ -112,8 +166,21 @@ const movies1990s: Movie[] = [
     poster: posterFresa,
     duration: "110 min",
     genre: ["Drama", "Comedia"],
-    synopsis: "En La Habana de los años 90, Diego, un artista homosexual y culto, entabla una amistad inesperada con David, un joven militante comunista heterosexual. A través de su relación, la película explora temas de tolerancia, libertad de expresión, identidad sexual y las contradicciones de la sociedad cubana. Una reflexión profunda sobre la amistad que trasciende las diferencias ideológicas y personales.",
+    synopsis: "En La Habana de los años 90, Diego, un artista homosexual y culto, entabla una amistad inesperada con David, un joven militante comunista heterosexual. A través de su relación, la película explora temas de tolerancia, libertad de expresión, identidad sexual y las contradicciones de la sociedad cubana.",
     trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    awards: [
+      { name: "Oso de Plata - Festival de Berlín", year: 1994, category: "Gran Premio del Jurado" },
+      { name: "Premio Goya", year: 1995, category: "Mejor Película Extranjera de Habla Hispana" },
+      { name: "Nominación al Oscar", year: 1995, category: "Mejor Película Extranjera" }
+    ],
+    cast: [
+      { name: "Jorge Perugorría", role: "Diego" },
+      { name: "Vladimir Cruz", role: "David" },
+      { name: "Mirta Ibarra", role: "Nancy" },
+      { name: "Francisco Gattorno", role: "Miguel" },
+      { name: "Joel Angelino", role: "Germán" }
+    ],
+    notes: "Primera película cubana nominada al Oscar. Co-dirigida con Juan Carlos Tabío."
   },
 ];
 
@@ -130,8 +197,21 @@ const movies2000s: Movie[] = [
     poster: posterSuite,
     duration: "84 min",
     genre: ["Documental"],
-    synopsis: "Un retrato poético y silencioso de La Habana a través de las vidas cotidianas de sus habitantes. Sin diálogos ni narración, la película sigue a diez personas desde el amanecer hasta la noche, revelando sus sueños, luchas y la dignidad con la que enfrentan las dificultades de la vida diaria. Una obra cinematográfica que celebra la humanidad en medio de la adversidad.",
+    synopsis: "Un retrato poético y silencioso de La Habana a través de las vidas cotidianas de sus habitantes. Sin diálogos ni narración, la película sigue a diez personas desde el amanecer hasta la noche, revelando sus sueños y luchas.",
     trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    awards: [
+      { name: "Festival de San Sebastián", year: 2003, category: "Premio FIPRESCI" },
+      { name: "Festival de La Habana", year: 2003, category: "Gran Premio Coral" },
+      { name: "Premios Goya", year: 2004, category: "Nominación Mejor Documental" }
+    ],
+    cast: [
+      { name: "Francisquito", role: "Él mismo (niño con síndrome de Down)" },
+      { name: "Amanda", role: "Ella misma (bailarina)" },
+      { name: "Julio", role: "Él mismo (médico/payaso nocturno)" },
+      { name: "Iván", role: "Él mismo (obrero/bailarín)" },
+      { name: "Norma", role: "Ella misma (vendedora de maní)" }
+    ],
+    notes: "Sin diálogos, solo música e imágenes. Considerada una de las mejores películas cubanas del siglo XXI."
   },
 ];
 
@@ -150,6 +230,17 @@ const movies2010s: Movie[] = [
     genre: ["Drama", "Histórico"],
     synopsis: "Una mirada íntima a la infancia y juventud de José Martí, el héroe nacional de Cuba. La película explora sus primeros años, su despertar político y los eventos que forjaron al hombre que se convertiría en símbolo de la independencia cubana.",
     trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    awards: [
+      { name: "Festival de La Habana", year: 2010, category: "Gran Premio Coral" },
+      { name: "Premios Goya", year: 2011, category: "Nominación Mejor Película Iberoamericana" }
+    ],
+    cast: [
+      { name: "Damián Rodríguez", role: "Pepe Martí (niño)" },
+      { name: "Daniel Romero", role: "José Martí (adolescente)" },
+      { name: "Broselianda Hernández", role: "Leonor Pérez (madre)" },
+      { name: "Rolando Brito", role: "Mariano Martí (padre)" }
+    ],
+    notes: "Retrato humanista del héroe nacional cubano en su juventud."
   },
   {
     id: "conducta-2014",
@@ -159,8 +250,22 @@ const movies2010s: Movie[] = [
     poster: posterChala,
     duration: "108 min",
     genre: ["Drama"],
-    synopsis: "Chala es un niño de once años que vive en un barrio marginal de La Habana. Cuida de su madre drogadicta y sobrevive criando palomas de pelea. Carmela, su maestra de sexto grado, es la única que ve más allá de su comportamiento problemático y lucha contra el sistema educativo para salvarlo. Una historia conmovedora sobre la educación, la pobreza y la redención.",
+    synopsis: "Chala es un niño de once años que vive en un barrio marginal de La Habana. Carmela, su maestra, es la única que ve más allá de su comportamiento problemático y lucha contra el sistema educativo para salvarlo.",
     trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    awards: [
+      { name: "Premio Goya", year: 2015, category: "Mejor Película Iberoamericana" },
+      { name: "Festival de La Habana", year: 2014, category: "Gran Premio Coral" },
+      { name: "Festival de Málaga", year: 2014, category: "Mejor Película" },
+      { name: "Premios Platino", year: 2015, category: "Mejor Ópera Prima" }
+    ],
+    cast: [
+      { name: "Armando Valdés Freire", role: "Chala" },
+      { name: "Alina Rodríguez", role: "Carmela" },
+      { name: "Silvia Águila", role: "Sonia (madre de Chala)" },
+      { name: "Yuliet Cruz", role: "Directora Catalina" },
+      { name: "Armando Miguel Gómez", role: "Raúl" }
+    ],
+    notes: "La película cubana más taquillera de la historia en su país."
   },
 ];
 
@@ -177,8 +282,18 @@ const movies2020s: Movie[] = [
     poster: posterMemoria,
     duration: "112 min",
     genre: ["Drama"],
-    synopsis: "Una exploración cinematográfica de la memoria, la identidad y el exilio cubano. La película sigue a un intelectual que reflexiona sobre su vida y las decisiones que lo llevaron al extranjero, mientras los recuerdos de Cuba se entrelazan con su presente.",
+    synopsis: "Una exploración cinematográfica de la memoria, la identidad y el exilio cubano. La película sigue a un intelectual que reflexiona sobre su vida y las decisiones que lo llevaron al extranjero.",
     trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    awards: [
+      { name: "Festival de Tribeca", year: 2010, category: "Mejor Película" },
+      { name: "Festival de La Habana", year: 2010, category: "Premio Especial" }
+    ],
+    cast: [
+      { name: "David Alonso", role: "Sergio" },
+      { name: "Sara Ballesteros", role: "Laura" },
+      { name: "Lynn Cruz", role: "Elena" }
+    ],
+    notes: "Secuela de 'Memorias del subdesarrollo'. Producción independiente con efectos digitales innovadores."
   },
 ];
 

@@ -22,6 +22,7 @@ export { default as posterUltimaCena } from "@/assets/posters/la-ultima-cena.jpg
 
 // === DÉCADA DE 1980s ===
 export { default as posterLosPajaros } from "@/assets/los_pajaros.jpg";
+export { default as posterVampirosHabana } from "@/assets/posters/vampiros-en-la-habana.jpg";
 export { default as posterEnTresYDos } from "@/assets/posters/en-tres-y-dos.jpg";
 export { default as posterBellaAlhambra } from "@/assets/posters/la-bella-del-alhambra.jpg";
 export { default as posterCecilia } from "@/assets/posters/cecilia.jpg";
@@ -31,6 +32,7 @@ export { default as posterClandestinos } from "@/assets/posters/clandestinos.jpg
 export { default as posterPlaff } from "@/assets/posters/plaff.jpg";
 
 // === DÉCADA DE 1990s ===
+export { default as posterAdorablesMentiras } from "@/assets/posters/adorables-mentiras.jpg";
 export { default as posterFresa } from "@/assets/poster-FresayChocolate.jpg";
 export { default as posterMadagascar } from "@/assets/posters/madagascar.jpg";
 export { default as posterElefanteBicicleta } from "@/assets/posters/el-elefante-y-la-bicicleta.jpg";
@@ -42,6 +44,7 @@ export { default as posterPapelesSecundarios } from "@/assets/posters/papeles-se
 // === DÉCADA DE 2000s ===
 export { default as posterSuite } from "@/assets/poster-SuiteHabana.jpg";
 export { default as posterCuernoAbundancia } from "@/assets/posters/el-cuerno-de-la-abundancia.jpg";
+export { default as posterReyHabana } from "@/assets/posters/un-rey-en-la-habana.jpg";
 
 // === DÉCADA DE 2010s ===
 export { default as posterChala } from "@/assets/poster-Conducta.jpg";

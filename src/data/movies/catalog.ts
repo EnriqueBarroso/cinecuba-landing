@@ -96,6 +96,28 @@ const movies1960s: Movie[] = [
     ],
     notes: "Considerada una de las obras maestras del cine latinoamericano."
   },
+  {
+    id: "memorias-subdesarrollo",
+    title: "Memorias del subdesarrollo",
+    year: 1968,
+    director: "Tomás Gutiérrez Alea",
+    poster: posterMemoria,
+    duration: "97 min",
+    genre: ["Drama"],
+    synopsis: "Un intelectual burgués decide quedarse en Cuba tras la Revolución mientras su familia huye al exilio. Atrapado entre dos mundos, observa los cambios de la sociedad cubana mientras cuestiona su propia identidad y lugar en el nuevo orden.",
+    trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    awards: [
+      { name: "Festival de Karlovy Vary", year: 1968, category: "Premio FIPRESCI" },
+      { name: "Revista Sight & Sound", year: 1999, category: "Una de las mejores películas del siglo XX" }
+    ],
+    cast: [
+      { name: "Sergio Corrieri", role: "Sergio" },
+      { name: "Daisy Granados", role: "Elena" },
+      { name: "Eslinda Núñez", role: "Noemí" },
+      { name: "Omar Valdés", role: "Pablo" }
+    ],
+    notes: "Basada en la novela de Edmundo Desnoes. Considerada una de las obras maestras del cine latinoamericano."
+  },
 ];
 
 // ============================================================================
@@ -132,6 +154,26 @@ const movies1970s: Movie[] = [
 
 const movies1980s: Movie[] = [
   {
+    id: "el-brigadista",
+    title: "El Brigadista",
+    year: 1977,
+    director: "Octavio Cortázar",
+    poster: "/placeholder.svg",
+    duration: "119 min",
+    genre: ["Drama", "Histórico"],
+    synopsis: "Durante la Campaña de Alfabetización de 1961, un joven habanero viaja a las montañas del Escambray para enseñar a leer y escribir a los campesinos, enfrentándose a bandidos contrarrevolucionarios.",
+    awards: [
+      { name: "Festival de Moscú", year: 1978, category: "Premio Especial" }
+    ],
+    cast: [
+      { name: "Salvador Wood", role: "Mario" },
+      { name: "Jorge Villazón", role: "Eladio" },
+      { name: "Idalia Anreus", role: "Clarita" },
+      { name: "Raúl Pomares", role: "Ciro" }
+    ],
+    notes: "Película emblemática sobre la Campaña de Alfabetización cubana."
+  },
+  {
     id: "pajaros-escopeta",
     title: "Los pájaros tirándole a la escopeta",
     year: 1984,
@@ -150,6 +192,48 @@ const movies1980s: Movie[] = [
       { name: "César Évora", role: "El padre" }
     ],
     notes: "Una de las comedias cubanas más populares de la década."
+  },
+  {
+    id: "clandestinos",
+    title: "Clandestinos",
+    year: 1987,
+    director: "Fernando Pérez",
+    poster: "/placeholder.svg",
+    duration: "100 min",
+    genre: ["Drama", "Histórico"],
+    synopsis: "La Habana, 1958. Un grupo de jóvenes revolucionarios vive en la clandestinidad mientras prepara acciones contra la dictadura de Batista. La película explora el amor, la lealtad y el sacrificio en tiempos de lucha.",
+    awards: [
+      { name: "Festival de La Habana", year: 1987, category: "Gran Premio Coral" },
+      { name: "Festival de Karlovy Vary", year: 1988, category: "Premio Especial" }
+    ],
+    cast: [
+      { name: "Luis Alberto García", role: "Ernesto" },
+      { name: "Isabel Santos", role: "Nereida" },
+      { name: "Susana Pérez", role: "Rosa" },
+      { name: "Miguel Gutiérrez", role: "Néstor" }
+    ],
+    notes: "Ópera prima de Fernando Pérez que lo estableció como uno de los grandes directores cubanos."
+  },
+  {
+    id: "plaff",
+    title: "Plaff o Demasiado miedo a la vida",
+    year: 1988,
+    director: "Juan Carlos Tabío",
+    poster: "/placeholder.svg",
+    duration: "100 min",
+    genre: ["Comedia"],
+    synopsis: "Concha, una viuda hipocondríaca y supersticiosa, vive atormentada por misteriosos huevos que caen sobre ella. Una comedia negra que satiriza los miedos irracionales y la burocracia cubana.",
+    awards: [
+      { name: "Festival de La Habana", year: 1988, category: "Premio Coral a la Comedia" },
+      { name: "Festival de Bogotá", year: 1989, category: "Mejor Película" }
+    ],
+    cast: [
+      { name: "Daisy Granados", role: "Concha" },
+      { name: "Thais Valdés", role: "Clarita" },
+      { name: "Luis Alberto García", role: "José Ramón" },
+      { name: "Raúl Pomares", role: "El vecino" }
+    ],
+    notes: "Título onomatopéyico que representa el sonido de los huevos al caer."
   },
 ];
 
@@ -273,30 +357,7 @@ const movies2010s: Movie[] = [
 // DÉCADA DE 2020 - CINE CONTEMPORÁNEO
 // ============================================================================
 
-const movies2020s: Movie[] = [
-  {
-    id: "memorias-subdesarrollo",
-    title: "Memorias del subdesarrollo",
-    year: 1968,
-    director: "Tomás Gutiérrez Alea",
-    poster: posterMemoria,
-    duration: "97 min",
-    genre: ["Drama"],
-    synopsis: "Un intelectual burgués decide quedarse en Cuba tras la Revolución mientras su familia huye al exilio. Atrapado entre dos mundos, observa los cambios de la sociedad cubana mientras cuestiona su propia identidad y lugar en el nuevo orden.",
-    trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    awards: [
-      { name: "Festival de Karlovy Vary", year: 1968, category: "Premio FIPRESCI" },
-      { name: "Revista Sight & Sound", year: 1999, category: "Una de las mejores películas del siglo XX" }
-    ],
-    cast: [
-      { name: "Sergio Corrieri", role: "Sergio" },
-      { name: "Daisy Granados", role: "Elena" },
-      { name: "Eslinda Núñez", role: "Noemí" },
-      { name: "Omar Valdés", role: "Pablo" }
-    ],
-    notes: "Basada en la novela de Edmundo Desnoes. Considerada una de las obras maestras del cine latinoamericano."
-  },
-];
+const movies2020s: Movie[] = [];
 
 // ============================================================================
 // EXPORTACIÓN DEL CATÁLOGO COMPLETO

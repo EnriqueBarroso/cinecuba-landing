@@ -126,6 +126,27 @@ const movies1960s: Movie[] = [
 
 const movies1970s: Movie[] = [
   {
+    id: "la-ultima-cena",
+    title: "La última cena",
+    year: 1976,
+    director: "Tomás Gutiérrez Alea",
+    poster: "/placeholder.svg",
+    duration: "120 min",
+    genre: ["Drama", "Histórico"],
+    synopsis: "Un conde hacendado del siglo XVIII decide recrear la Última Cena con doce de sus esclavos, ofreciéndoles libertad. Sin embargo, cuando su promesa no se cumple, estalla una rebelión que tendrá consecuencias trágicas.",
+    awards: [
+      { name: "Festival de Taormina", year: 1977, category: "Mejor Película" },
+      { name: "Festival de La Habana", year: 1976, category: "Gran Premio" }
+    ],
+    cast: [
+      { name: "Nelson Villagra", role: "El Conde" },
+      { name: "Silvano Rey", role: "Sebastián" },
+      { name: "Luis Alberto García", role: "Antonio" },
+      { name: "José Antonio Rodríguez", role: "Don Manuel" }
+    ],
+    notes: "Alegoría poderosa sobre la esclavitud y la hipocresía religiosa en la Cuba colonial."
+  },
+  {
     id: "sobrevivientes",
     title: "Los sobrevivientes",
     year: 1979,
@@ -153,6 +174,48 @@ const movies1970s: Movie[] = [
 // ============================================================================
 
 const movies1980s: Movie[] = [
+  {
+    id: "cecilia",
+    title: "Cecilia",
+    year: 1982,
+    director: "Humberto Solás",
+    poster: "/placeholder.svg",
+    duration: "127 min",
+    genre: ["Drama", "Romance", "Histórico"],
+    synopsis: "En la Cuba colonial del siglo XIX, Cecilia Valdés, una bella mulata, se enamora de Leonardo, un joven criollo blanco, sin saber que son medio hermanos. Una historia de pasión, tragedia y desigualdad social.",
+    awards: [
+      { name: "Festival de La Habana", year: 1982, category: "Gran Premio Coral" },
+      { name: "Festival de Cartagena", year: 1983, category: "Mejor Película" }
+    ],
+    cast: [
+      { name: "Daisy Granados", role: "Cecilia Valdés" },
+      { name: "Imanol Arias", role: "Leonardo Gamboa" },
+      { name: "Nelson Villagra", role: "Don Cándido Gamboa" },
+      { name: "Raquel Revuelta", role: "Doña Rosa" }
+    ],
+    notes: "Basada en la novela clásica de Cirilo Villaverde. Una de las superproducciones más ambiciosas del cine cubano."
+  },
+  {
+    id: "un-hombre-de-exito",
+    title: "Un hombre de éxito",
+    year: 1986,
+    director: "Humberto Solás",
+    poster: "/placeholder.svg",
+    duration: "120 min",
+    genre: ["Drama"],
+    synopsis: "Javier es un joven ambicioso que traiciona sus ideales revolucionarios para escalar posiciones durante las décadas del 30 al 50 en Cuba. Un retrato mordaz del oportunismo político.",
+    awards: [
+      { name: "Festival de La Habana", year: 1986, category: "Premio Coral" },
+      { name: "Festival de Biarritz", year: 1987, category: "Premio del Público" }
+    ],
+    cast: [
+      { name: "César Évora", role: "Javier" },
+      { name: "Daisy Granados", role: "Julia" },
+      { name: "Jorge Trinchet", role: "Darío" },
+      { name: "Raúl Pomares", role: "Jacinto" }
+    ],
+    notes: "Una de las películas cubanas más críticas con el oportunismo político."
+  },
   {
     id: "el-brigadista",
     title: "El Brigadista",
@@ -265,6 +328,26 @@ const movies1990s: Movie[] = [
       { name: "Joel Angelino", role: "Germán" }
     ],
     notes: "Primera película cubana nominada al Oscar. Co-dirigida con Juan Carlos Tabío."
+  },
+  {
+    id: "madagascar",
+    title: "Madagascar",
+    year: 1994,
+    director: "Fernando Pérez",
+    poster: "/placeholder.svg",
+    duration: "52 min",
+    genre: ["Drama"],
+    synopsis: "En el Período Especial, una madre profesora y su hija adolescente enfrentan la crisis económica de los años 90 en Cuba. El título hace referencia al sueño de escape a una isla lejana.",
+    awards: [
+      { name: "Festival de La Habana", year: 1994, category: "Premio Coral" },
+      { name: "Festival de Gramado", year: 1994, category: "Mejor Película" }
+    ],
+    cast: [
+      { name: "Laura de la Uz", role: "Laura" },
+      { name: "Zaida Castellanos", role: "Laura madre" },
+      { name: "Elena Valverde", role: "La abuela" }
+    ],
+    notes: "Retrato intimista del Período Especial y las tensiones generacionales."
   },
 ];
 

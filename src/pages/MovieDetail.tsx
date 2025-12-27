@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Heart, Play, Calendar, Clock, Film } from "lucide-react";
+import { ArrowLeft, Heart, Play, Calendar, Clock, Film, Award, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -257,6 +257,64 @@ const MovieDetail = () => {
                   <p className="text-foreground">{movie.genre.join(", ")}</p>
                 </div>
               </div>
+
+              {/* Premios */}
+              {movie.awards && movie.awards.length > 0 && (
+                <div className="space-y-6 border-t border-hairline pt-8">
+                  <div className="flex items-center gap-3">
+                    <Award className="w-5 h-5 text-gold" />
+                    <h2 className="font-serif text-2xl">Premios y Reconocimientos</h2>
+                  </div>
+                  <div className="grid gap-4">
+                    {movie.awards.map((award, index) => (
+                      <div 
+                        key={index}
+                        className="flex items-start gap-4 p-4 bg-secondary/30 border border-hairline"
+                      >
+                        <div className="w-10 h-10 bg-gold/10 flex items-center justify-center shrink-0">
+                          <Award className="w-5 h-5 text-gold" />
+                        </div>
+                        <div className="space-y-1">
+                          <p className="font-medium text-foreground">{award.name}</p>
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <span>{award.year}</span>
+                            <span className="text-hairline">•</span>
+                            <span>{award.category}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Elenco */}
+              {movie.cast && movie.cast.length > 0 && (
+                <div className="space-y-6 border-t border-hairline pt-8">
+                  <div className="flex items-center gap-3">
+                    <Users className="w-5 h-5 text-gold" />
+                    <h2 className="font-serif text-2xl">Elenco Principal</h2>
+                  </div>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {movie.cast.map((member, index) => (
+                      <div 
+                        key={index}
+                        className="flex items-center gap-4 p-4 bg-secondary/30 border border-hairline group hover:border-gold/30 transition-colors"
+                      >
+                        <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center shrink-0">
+                          <span className="text-gold font-serif text-lg">
+                            {member.name.charAt(0)}
+                          </span>
+                        </div>
+                        <div className="min-w-0">
+                          <p className="font-medium text-foreground truncate">{member.name}</p>
+                          <p className="text-sm text-muted-foreground truncate">{member.role}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

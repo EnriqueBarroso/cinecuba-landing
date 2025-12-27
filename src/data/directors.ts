@@ -10,6 +10,7 @@ import saraGomezPhoto from "@/assets/directors/sara-gomez.jpg";
 import julioGarciaEspinosaPhoto from "@/assets/directors/julio-garcia-espinosa.jpg";
 import manuelPerezParedesPhoto from "@/assets/directors/manuel-perez-paredes.jpg";
 import pastorVegaPhoto from "@/assets/directors/pastor-vega.jpg";
+import enriquePinedaBarnetPhoto from "@/assets/directors/enrique-pineda-barnet.jpg";
 
 export interface Director {
   id: string;
@@ -205,6 +206,7 @@ export const directors: Director[] = [
   {
     id: "enrique-pineda-barnet",
     name: "Enrique Pineda Barnet",
+    photo: enriquePinedaBarnetPhoto,
     birthYear: 1933,
     deathYear: 2021,
     nationality: "Cubano",

@@ -4,6 +4,8 @@ import juanCarlosTabioPhoto from "@/assets/directors/juan-carlos-tabio.jpg";
 import fernandoPerezPhoto from "@/assets/directors/fernando-perez.jpg";
 import ernestoDaranasPhoto from "@/assets/directors/ernesto-daranas.jpg";
 import miguelCoyulaPhoto from "@/assets/directors/miguel-coyula.jpg";
+import octavioCortazarPhoto from "@/assets/directors/octavio-cortazar.jpg";
+import rolandoDiazPhoto from "@/assets/directors/rolando-diaz.jpg";
 
 export interface Director {
   id: string;
@@ -106,6 +108,35 @@ export const directors: Director[] = [
       "Premio del Jurado en el Festival de Tribeca",
       "Premio a Mejor Director en el Festival de La Habana",
       "Premio FIPRESCI en varios festivales internacionales"
+    ]
+  },
+  {
+    id: "octavio-cortazar",
+    name: "Octavio Cortázar",
+    photo: octavioCortazarPhoto,
+    birthYear: 1935,
+    deathYear: 2008,
+    nationality: "Cubano",
+    biography: "Octavio Cortázar fue un destacado documentalista y cineasta cubano, considerado uno de los fundadores del cine documental cubano. Nacido en Santiago de Cuba, se unió al ICAIC en sus primeros años y desarrolló una extensa carrera dedicada principalmente al documental, aunque también incursionó en el cine de ficción. Su documental 'Por primera vez' (1967), que captura la llegada del cine móvil a una comunidad rural cubana, es considerado una obra maestra del género. Con 'El Brigadista' (1977) demostró su capacidad para el cine narrativo, creando una película emblemática sobre la Campaña de Alfabetización. Cortázar fue un cronista sensible de la realidad cubana y un maestro del lenguaje cinematográfico.",
+    activeYears: "1961-2008",
+    awards: [
+      "Premio Especial del Festival de Moscú por 'El Brigadista' (1978)",
+      "Premio Nacional de Cine de Cuba",
+      "Premio Coral del Festival de La Habana"
+    ]
+  },
+  {
+    id: "rolando-diaz",
+    name: "Rolando Díaz",
+    photo: rolandoDiazPhoto,
+    birthYear: 1947,
+    nationality: "Cubano",
+    biography: "Rolando Díaz es un director y guionista cubano conocido por sus comedias populares y su habilidad para retratar la vida cotidiana cubana con humor e ingenio. Formado en el ICAIC, desarrolló un estilo distintivo que combina la comedia con la observación social aguda. Su película 'Los pájaros tirándole a la escopeta' (1984) se convirtió en un clásico del cine cubano, celebrada por su frescura y su retrato ingenioso de las relaciones familiares cubanas. Díaz ha continuado su carrera tanto en Cuba como en el extranjero, manteniendo siempre su compromiso con un cine accesible y entretenido que no renuncia a la mirada crítica sobre la sociedad.",
+    activeYears: "1975-presente",
+    awards: [
+      "Premio de Comedia del Festival de Peñíscola por 'Los pájaros tirándole a la escopeta' (1985)",
+      "Premio del Público en el Festival de La Habana",
+      "Premio Coral por Mejor Comedia"
     ]
   }
 ];

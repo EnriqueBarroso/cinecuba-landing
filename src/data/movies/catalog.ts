@@ -419,6 +419,26 @@ const movies1980s: Movie[] = [
     notes: "Ganadora del primer Goya a Mejor Película Extranjera de Habla Hispana. Basada en la novela 'Canción de Rachel' de Miguel Barnet."
   },
   {
+    id: "vampiros-habana",
+    title: "¡Vampiros en La Habana!",
+    year: 1985,
+    director: "Juan Padrón",
+    poster: "/placeholder.svg",
+    duration: "69 min",
+    genre: ["Animación", "Comedia"],
+    synopsis: "Un científico vampiro cubano inventa una fórmula que permite a los vampiros resistir la luz del sol. Mientras tanto, las mafias vampíricas de Estados Unidos y Europa oriental luchan por hacerse con el secreto. Una sátira animada llena de humor negro y referencias a la cultura cubana.",
+    awards: [
+      { name: "Encuesta Noticine.com", year: 2009, category: "Top 100 Mejores Películas Iberoamericanas (#50)" }
+    ],
+    cast: [
+      { name: "Manuel Marín", role: "Pepito (voz)" },
+      { name: "Frank González", role: "Joseph Amadeus Von Drácula (voz)" },
+      { name: "Margarita Agüero", role: "Lola (voz)" },
+      { name: "Irela Bravo", role: "Personaje (voz)" }
+    ],
+    notes: "Segundo largometraje animado de Juan Padrón, creador de Elpidio Valdés. Coproducida con España y Alemania. Banda sonora de Arturo Sandoval."
+  },
+  {
     id: "plaff",
     title: "Plaff o Demasiado miedo a la vida",
     year: 1988,
@@ -485,6 +505,26 @@ const movies1980s: Movie[] = [
 // ============================================================================
 
 const movies1990s: Movie[] = [
+  {
+    id: "adorables-mentiras",
+    title: "Adorables mentiras",
+    year: 1991,
+    director: "Gerardo Chijona",
+    poster: "/placeholder.svg",
+    duration: "108 min",
+    genre: ["Comedia", "Romance"],
+    synopsis: "Nancy es una aspirante a actriz que sobrevive en La Habana del Período Especial doblando películas extranjeras. Cuando conoce a un extranjero que la confunde con una actriz famosa, decide seguir el juego. Una comedia romántica sobre las apariencias y los sueños en tiempos difíciles.",
+    awards: [
+      { name: "Festival de La Habana", year: 1991, category: "Premio del Público" }
+    ],
+    cast: [
+      { name: "Isabel Santos", role: "Nancy" },
+      { name: "Luis Alberto García", role: "Lombardi" },
+      { name: "Mirtha Ibarra", role: "Personaje" },
+      { name: "Thais Valdés", role: "Personaje" }
+    ],
+    notes: "Una de las comedias cubanas más populares de los 90s. Guion coescrito con Senel Paz."
+  },
   {
     id: "fresa-chocolate-1993",
     title: "Fresa y Chocolate",
@@ -640,6 +680,25 @@ const movies2000s: Movie[] = [
       { name: "Paula Alí", role: "Personaje" }
     ],
     notes: "Una sátira sobre la ambición y los sueños de riqueza."
+  },
+  {
+    id: "rey-habana",
+    title: "Un rey en La Habana",
+    year: 2005,
+    director: "Alexis Valdés",
+    poster: "/placeholder.svg",
+    duration: "97 min",
+    genre: ["Comedia"],
+    synopsis: "Papito es un joven actor criado en Palo Cagao, el barrio marginal más peligroso de La Habana, del que sueña con salir algún día junto a su pequeña compañía de teatro. La pasión de su vida es Yoli, una mulata espectacular con la que sale desde niños. Una comedia sobre supervivencia, amor y sueños en La Habana.",
+    awards: [
+      { name: "Festival de Comedia de Peñíscola", year: 2005, category: "Premio del Público" }
+    ],
+    cast: [
+      { name: "Alexis Valdés", role: "Papito" },
+      { name: "Genco Gulan", role: "Don Arturo" },
+      { name: "Carmen Salinas", role: "La Caimana" }
+    ],
+    notes: "Ópera prima de Alexis Valdés como director. Coproducción cubano-española."
   },
 ];
 

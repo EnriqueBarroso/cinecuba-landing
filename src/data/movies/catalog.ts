@@ -21,6 +21,7 @@ import {
   posterSobrevivientes,
   posterUltimaCena,
   posterLosPajaros,
+  posterEnTresYDos,
   posterCecilia,
   posterHombreExito,
   posterBrigadista,
@@ -262,6 +263,27 @@ const movies1980s: Movie[] = [
       { name: "César Évora", role: "El padre" }
     ],
     notes: "Una de las comedias cubanas más populares de la década."
+  },
+  {
+    id: "en-tres-y-dos",
+    title: "En tres y dos",
+    year: 1985,
+    director: "Rolando Díaz",
+    poster: posterEnTresYDos,
+    duration: "100 min",
+    genre: ["Comedia", "Drama"],
+    synopsis: "Una comedia deportiva que sigue las peripecias de un equipo de béisbol cubano y su entrenador. La película captura con humor y sensibilidad el mundo del deporte nacional cubano y las relaciones humanas que se tejen en torno a él.",
+    awards: [
+      { name: "Festival de La Habana", year: 1985, category: "Premio del Público" }
+    ],
+    cast: [
+      { name: "Samuel Claxton", role: "El entrenador" },
+      { name: "Mario Balmaseda", role: "Personaje principal" },
+      { name: "Luis Alberto García", role: "Jugador" },
+      { name: "Alejandro Lugo", role: "Jugador" },
+      { name: "Irela Bravo", role: "Personaje femenino" }
+    ],
+    notes: "Una de las películas de béisbol más queridas del cine cubano."
   },
   {
     id: "clandestinos",

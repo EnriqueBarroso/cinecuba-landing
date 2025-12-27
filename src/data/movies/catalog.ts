@@ -18,7 +18,9 @@ import {
   posterLucia,
   posterBurocrata,
   poster12Sillas,
+  posterJuanQuinQuin,
   posterDeCiertaManera,
+  posterMaisinicu,
   posterRetratoTeresa,
   posterSobrevivientes,
   posterUltimaCena,
@@ -30,9 +32,12 @@ import {
   posterBrigadista,
   posterClandestinos,
   posterPlaff,
+  posterElefanteBicicleta,
   posterFresa,
   posterMadagascar,
+  posterListaEspera,
   posterSuite,
+  posterCuernoAbundancia,
   posterChala,
   posterMarti,
   posterMemoria
@@ -61,6 +66,25 @@ const movies1960s: Movie[] = [
       { name: "René Sánchez", role: "Padre Cirilo" },
       { name: "Pilín Vallejo", role: "La viuda" }
     ]
+  },
+  {
+    id: "aventuras-juan-quin-quin",
+    title: "Las aventuras de Juan Quin Quín",
+    year: 1967,
+    director: "Julio García Espinosa",
+    poster: posterJuanQuinQuin,
+    duration: "110 min",
+    genre: ["Comedia"],
+    synopsis: "Juan Quin Quín es un guajiro que trabaja en diversos oficios mientras lucha contra la injusticia en la Cuba prerrevolucionaria. Una aventura picaresca con humor y crítica social.",
+    awards: [
+      { name: "Festival de Karlovy Vary", year: 1967, category: "Premio Especial del Jurado" }
+    ],
+    cast: [
+      { name: "Julio Martínez", role: "Juan Quin Quín" },
+      { name: "Erdwin Fernández", role: "Jachero" },
+      { name: "Adelaida Raymat", role: "Teresa" }
+    ],
+    notes: "Una de las películas cubanas más populares y divertidas de la década."
   },
   {
     id: "muerte-burocrata",
@@ -136,6 +160,25 @@ const movies1960s: Movie[] = [
 // ============================================================================
 
 const movies1970s: Movie[] = [
+  {
+    id: "hombre-maisinicu",
+    title: "El hombre de Maisinicú",
+    year: 1973,
+    director: "Manuel Pérez",
+    poster: posterMaisinicu,
+    duration: "100 min",
+    genre: ["Drama", "Histórico"],
+    synopsis: "Basada en hechos reales, narra la historia de Alberto Delgado, un agente de la Seguridad del Estado que se infiltra entre los bandidos del Escambray haciéndose pasar por contrarrevolucionario.",
+    awards: [
+      { name: "Festival de Karlovy Vary", year: 1974, category: "Premio Especial" }
+    ],
+    cast: [
+      { name: "Sergio Corrieri", role: "Alberto Delgado" },
+      { name: "Reinaldo Miravalles", role: "Maro" },
+      { name: "Nelson Villagra", role: "El capitán" }
+    ],
+    notes: "Una de las películas cubanas más emblemáticas sobre la lucha contra bandidos."
+  },
   {
     id: "de-cierta-manera",
     title: "De cierta manera",
@@ -444,6 +487,46 @@ const movies1990s: Movie[] = [
     ],
     notes: "Retrato intimista del Período Especial y las tensiones generacionales."
   },
+  {
+    id: "elefante-bicicleta",
+    title: "El elefante y la bicicleta",
+    year: 1994,
+    director: "Juan Carlos Tabío",
+    poster: posterElefanteBicicleta,
+    duration: "85 min",
+    genre: ["Comedia", "Drama"],
+    synopsis: "En un pueblo costero aislado de Cuba, la llegada del cine ambulante genera un conflicto entre el cura del pueblo y los habitantes que quieren disfrutar del séptimo arte. Una fábula sobre la magia del cine.",
+    awards: [
+      { name: "Festival de La Habana", year: 1994, category: "Premio del Público" }
+    ],
+    cast: [
+      { name: "Luis Alberto García", role: "Jefe del pueblo" },
+      { name: "Lilliam Vega", role: "Personaje" },
+      { name: "Raúl Pomares", role: "Personaje" }
+    ],
+    notes: "Una celebración poética del cine y su poder transformador."
+  },
+  {
+    id: "lista-espera",
+    title: "Lista de espera",
+    year: 2000,
+    director: "Juan Carlos Tabío",
+    poster: posterListaEspera,
+    duration: "112 min",
+    genre: ["Comedia", "Drama"],
+    synopsis: "Un grupo de pasajeros queda varado en una terminal de ómnibus en el interior de Cuba. Mientras esperan un transporte que nunca llega, deciden transformar la estación en una comunidad ideal. Una metáfora sobre la utopía y la solidaridad cubana.",
+    awards: [
+      { name: "Festival de La Habana", year: 2000, category: "Gran Premio Coral" },
+      { name: "Festival de Gramado", year: 2000, category: "Mejor Película" }
+    ],
+    cast: [
+      { name: "Vladimir Cruz", role: "Emilio" },
+      { name: "Tahimí Alvariño", role: "Jacqueline" },
+      { name: "Jorge Perugorría", role: "Roldán" },
+      { name: "Alina Rodríguez", role: "Plácida" }
+    ],
+    notes: "Una de las comedias cubanas más queridas del nuevo milenio."
+  },
 ];
 
 // ============================================================================
@@ -474,6 +557,25 @@ const movies2000s: Movie[] = [
       { name: "Norma", role: "Ella misma (vendedora de maní)" }
     ],
     notes: "Sin diálogos, solo música e imágenes. Considerada una de las mejores películas cubanas del siglo XXI."
+  },
+  {
+    id: "cuerno-abundancia",
+    title: "El cuerno de la abundancia",
+    year: 2008,
+    director: "Juan Carlos Tabío",
+    poster: posterCuernoAbundancia,
+    duration: "110 min",
+    genre: ["Comedia"],
+    synopsis: "Los habitantes de un pueblo cubano descubren que podrían heredar una fortuna millonaria de un antepasado. La noticia desata una fiebre de esperanzas y sueños que trastorna la vida de toda la comunidad.",
+    awards: [
+      { name: "Festival de La Habana", year: 2008, category: "Premio del Público" }
+    ],
+    cast: [
+      { name: "Jorge Perugorría", role: "Bernardito" },
+      { name: "Enrique Molina", role: "Personaje" },
+      { name: "Paula Alí", role: "Personaje" }
+    ],
+    notes: "Una sátira sobre la ambición y los sueños de riqueza."
   },
 ];
 

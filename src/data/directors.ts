@@ -138,6 +138,47 @@ export const directors: Director[] = [
       "Premio del Público en el Festival de La Habana",
       "Premio Coral por Mejor Comedia"
     ]
+  },
+  {
+    id: "sara-gomez",
+    name: "Sara Gómez",
+    birthYear: 1942,
+    deathYear: 1974,
+    nationality: "Cubana",
+    biography: "Sara Gómez Yera fue una pionera del cine cubano y la primera mujer en dirigir un largometraje en Cuba. Nacida en Guanabacoa, La Habana, comenzó a trabajar en el ICAIC en 1961, donde se desempeñó como asistente de dirección de Tomás Gutiérrez Alea y Agnès Varda. Como mujer afrocubana, su perspectiva única aportó una visión crítica sobre raza, género y clase social en la Cuba revolucionaria. Su obra maestra 'De cierta manera' (1974), que mezcla documental y ficción, explora la transformación social en un barrio marginal de La Habana. Trágicamente, falleció de un ataque de asma a los 31 años, antes de completar la edición final de la película, que fue terminada por Tomás Gutiérrez Alea y Julio García Espinosa.",
+    activeYears: "1961-1974",
+    awards: [
+      "Reconocimiento póstumo como pionera del cine cubano",
+      "Premio a la trayectoria del Festival de Cine de La Habana (póstumo)"
+    ]
+  },
+  {
+    id: "julio-garcia-espinosa",
+    name: "Julio García Espinosa",
+    birthYear: 1926,
+    deathYear: 2016,
+    nationality: "Cubano",
+    biography: "Julio García Espinosa fue uno de los fundadores y teóricos más importantes del cine cubano revolucionario. Nacido en La Habana, estudió cine en el Centro Sperimentale di Cinematografia en Roma junto a Tomás Gutiérrez Alea. Fue cofundador del ICAIC en 1959 y su presidente de 1983 a 1991, además de viceministro de Cultura. Su ensayo 'Por un cine imperfecto' (1969) se convirtió en un manifiesto fundamental del Nuevo Cine Latinoamericano, proponiendo un cine que priorizara el contenido revolucionario sobre la perfección técnica. Como director, realizó películas emblemáticas como 'Las aventuras de Juan Quin Quín' (1967), 'Son o no son' (1980) y 'Reina y Rey' (1994). Su legado como pensador y gestor cultural fue tan importante como su obra cinematográfica.",
+    activeYears: "1955-2000",
+    awards: [
+      "Premio Nacional de Cine de Cuba (2004)",
+      "Premio Coral de Honor del Festival de La Habana",
+      "Orden Félix Varela de Primer Grado"
+    ]
+  },
+  {
+    id: "manuel-perez-paredes",
+    name: "Manuel Pérez Paredes",
+    birthYear: 1939,
+    deathYear: 2025,
+    nationality: "Cubano",
+    biography: "Manuel Pérez Paredes fue uno de los fundadores del ICAIC y un director fundamental del cine cubano. Su filmografía incluye algunas de las películas más importantes del cine revolucionario cubano, destacando 'El hombre de Maisinicú' (1973), un thriller político sobre la lucha contra los bandidos contrarrevolucionarios en el Escambray. También dirigió 'Río Negro' (1977) y 'Páginas del diario de Mauricio' (2006). Su cine se caracterizó por un compromiso con las historias que reflejan la realidad cubana, combinando el rigor narrativo con una profunda sensibilidad social. Fue reconocido con el Premio Nacional de Cine de Cuba en 2013 por su contribución al desarrollo del séptimo arte en la isla.",
+    activeYears: "1960-2010",
+    awards: [
+      "Premio Nacional de Cine de Cuba (2013)",
+      "Premio Coral del Festival de La Habana",
+      "Medalla Alejo Carpentier"
+    ]
   }
 ];
 

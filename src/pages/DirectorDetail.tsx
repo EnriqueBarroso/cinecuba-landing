@@ -75,9 +75,9 @@ const DirectorDetail = () => {
   
   const director = id ? getDirectorById(id) : undefined;
   
-  // Get movies by this director
+  // Get movies by this director (includes co-directed films)
   const directorMovies = director 
-    ? movies.filter((m) => m.director === director.name)
+    ? movies.filter((m) => m.director.includes(director.name))
     : [];
 
   if (!director) {

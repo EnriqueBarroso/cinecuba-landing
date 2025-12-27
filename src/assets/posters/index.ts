@@ -11,9 +11,11 @@
 export { default as posterLucia } from "@/assets/poster-lucia.jpg";
 export { default as posterBurocrata } from "@/assets/La-muerte-de-un-burocrata-poster.jpg";
 export { default as poster12Sillas } from "@/assets/12_sillas.jpg";
+export { default as posterJuanQuinQuin } from "@/assets/posters/aventuras-de-juan-quin-quin.jpg";
 
 // === DÉCADA DE 1970s ===
 export { default as posterDeCiertaManera } from "@/assets/posters/de-cierta-manera.jpg";
+export { default as posterMaisinicu } from "@/assets/posters/el-hombre-de-maisinicu.jpg";
 export { default as posterRetratoTeresa } from "@/assets/posters/retrato-de-teresa.jpg";
 export { default as posterSobrevivientes } from "@/assets/sobrevivientes.jpg";
 export { default as posterUltimaCena } from "@/assets/posters/la-ultima-cena.jpg";
@@ -31,9 +33,12 @@ export { default as posterPlaff } from "@/assets/posters/plaff.jpg";
 // === DÉCADA DE 1990s ===
 export { default as posterFresa } from "@/assets/poster-FresayChocolate.jpg";
 export { default as posterMadagascar } from "@/assets/posters/madagascar.jpg";
+export { default as posterElefanteBicicleta } from "@/assets/posters/el-elefante-y-la-bicicleta.jpg";
+export { default as posterListaEspera } from "@/assets/posters/lista-de-espera.jpg";
 
 // === DÉCADA DE 2000s ===
 export { default as posterSuite } from "@/assets/poster-SuiteHabana.jpg";
+export { default as posterCuernoAbundancia } from "@/assets/posters/el-cuerno-de-la-abundancia.jpg";
 
 // === DÉCADA DE 2010s ===
 export { default as posterChala } from "@/assets/poster-Conducta.jpg";

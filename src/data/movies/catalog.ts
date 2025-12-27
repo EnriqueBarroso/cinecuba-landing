@@ -404,7 +404,7 @@ const movies1990s: Movie[] = [
     id: "fresa-chocolate-1993",
     title: "Fresa y Chocolate",
     year: 1993,
-    director: "Tomás Gutiérrez Alea",
+    director: "Tomás Gutiérrez Alea, Juan Carlos Tabío",
     poster: posterFresa,
     duration: "110 min",
     genre: ["Drama", "Comedia"],

@@ -19,6 +19,7 @@ export { default as posterUltimaCena } from "@/assets/posters/la-ultima-cena.jpg
 // === DÉCADA DE 1980s ===
 export { default as posterLosPajaros } from "@/assets/los_pajaros.jpg";
 export { default as posterCecilia } from "@/assets/posters/cecilia.jpg";
+export { default as posterHombreExito } from "@/assets/posters/un-hombre-de-exito.jpg";
 export { default as posterBrigadista } from "@/assets/posters/el-brigadista.jpg";
 export { default as posterClandestinos } from "@/assets/posters/clandestinos.jpg";
 export { default as posterPlaff } from "@/assets/posters/plaff.jpg";

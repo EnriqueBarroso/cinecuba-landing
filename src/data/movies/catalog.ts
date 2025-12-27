@@ -275,25 +275,26 @@ const movies2010s: Movie[] = [
 
 const movies2020s: Movie[] = [
   {
-    id: "memoria-2022",
-    title: "Memorias del Desarrollo",
-    year: 2022,
-    director: "Miguel Coyula",
+    id: "memorias-subdesarrollo",
+    title: "Memorias del subdesarrollo",
+    year: 1968,
+    director: "Tomás Gutiérrez Alea",
     poster: posterMemoria,
-    duration: "112 min",
+    duration: "97 min",
     genre: ["Drama"],
-    synopsis: "Una exploración cinematográfica de la memoria, la identidad y el exilio cubano. La película sigue a un intelectual que reflexiona sobre su vida y las decisiones que lo llevaron al extranjero.",
+    synopsis: "Un intelectual burgués decide quedarse en Cuba tras la Revolución mientras su familia huye al exilio. Atrapado entre dos mundos, observa los cambios de la sociedad cubana mientras cuestiona su propia identidad y lugar en el nuevo orden.",
     trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     awards: [
-      { name: "Festival de Tribeca", year: 2010, category: "Mejor Película" },
-      { name: "Festival de La Habana", year: 2010, category: "Premio Especial" }
+      { name: "Festival de Karlovy Vary", year: 1968, category: "Premio FIPRESCI" },
+      { name: "Revista Sight & Sound", year: 1999, category: "Una de las mejores películas del siglo XX" }
     ],
     cast: [
-      { name: "David Alonso", role: "Sergio" },
-      { name: "Sara Ballesteros", role: "Laura" },
-      { name: "Lynn Cruz", role: "Elena" }
+      { name: "Sergio Corrieri", role: "Sergio" },
+      { name: "Daisy Granados", role: "Elena" },
+      { name: "Eslinda Núñez", role: "Noemí" },
+      { name: "Omar Valdés", role: "Pablo" }
     ],
-    notes: "Secuela de 'Memorias del subdesarrollo'. Producción independiente con efectos digitales innovadores."
+    notes: "Basada en la novela de Edmundo Desnoes. Considerada una de las obras maestras del cine latinoamericano."
   },
 ];
 

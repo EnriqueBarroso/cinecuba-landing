@@ -436,6 +436,45 @@ const movies1980s: Movie[] = [
     ],
     notes: "Título onomatopéyico que representa el sonido de los huevos al caer."
   },
+  {
+    id: "papeles-secundarios",
+    title: "Papeles secundarios",
+    year: 1989,
+    director: "Orlando Rojas",
+    poster: "/placeholder.svg",
+    duration: "95 min",
+    genre: ["Drama"],
+    synopsis: "Un grupo de actores de teatro enfrenta las dificultades de ensayar una obra mientras lidian con sus propios dramas personales. La película explora la relación entre el arte y la vida, y los sacrificios que implica la vocación artística en Cuba.",
+    awards: [
+      { name: "Festival de La Habana", year: 1989, category: "Premio Coral" }
+    ],
+    cast: [
+      { name: "Rosita Fornés", role: "Actriz principal" },
+      { name: "Leonor Arocha", role: "Personaje" },
+      { name: "Verónica Lynn", role: "Personaje" }
+    ],
+    notes: "Una de las películas cubanas más importantes sobre el mundo teatral."
+  },
+  {
+    id: "se-permuta",
+    title: "Se permuta",
+    year: 1984,
+    director: "Juan Carlos Tabío",
+    poster: "/placeholder.svg",
+    duration: "100 min",
+    genre: ["Comedia"],
+    synopsis: "Gloria vive en un apartamento pequeño en Centro Habana y sueña con mudarse a un lugar mejor. A través de una cadena de permutas de viviendas, la película satiriza la burocracia y las aspiraciones de la clase media cubana.",
+    awards: [
+      { name: "Festival de La Habana", year: 1984, category: "Premio del Público" }
+    ],
+    cast: [
+      { name: "Rosita Fornés", role: "Gloria" },
+      { name: "Isabel Santos", role: "Yolanda" },
+      { name: "Luis Alberto García", role: "Eugenio" },
+      { name: "Mario Balmaseda", role: "Personaje" }
+    ],
+    notes: "Una de las comedias cubanas más populares y queridas de los 80s."
+  },
 ];
 
 // ============================================================================
@@ -505,6 +544,28 @@ const movies1990s: Movie[] = [
       { name: "Raúl Pomares", role: "Personaje" }
     ],
     notes: "Una celebración poética del cine y su poder transformador."
+  },
+  {
+    id: "guantanamera",
+    title: "Guantanamera",
+    year: 1995,
+    director: "Tomás Gutiérrez Alea, Juan Carlos Tabío",
+    poster: "/placeholder.svg",
+    duration: "101 min",
+    genre: ["Comedia"],
+    synopsis: "Un cortejo fúnebre atraviesa Cuba de punta a punta para trasladar el cadáver de la tía Yoyita desde Guantánamo hasta La Habana, enfrentando los absurdos de la burocracia cubana. Una sátira sobre la vida y la muerte en el Período Especial.",
+    awards: [
+      { name: "Festival de Berlín", year: 1995, category: "Nominación al Oso de Oro" },
+      { name: "Festival de La Habana", year: 1995, category: "Premio del Público" }
+    ],
+    cast: [
+      { name: "Carlos Cruz", role: "Adolfo" },
+      { name: "Mirtha Ibarra", role: "Gina" },
+      { name: "Jorge Perugorría", role: "Mariano" },
+      { name: "Raúl Eguren", role: "Cándido" },
+      { name: "Conchita Brando", role: "Yoyita" }
+    ],
+    notes: "Última película de Tomás Gutiérrez Alea, estrenada póstumamente tras su muerte en 1996."
   },
   {
     id: "lista-espera",

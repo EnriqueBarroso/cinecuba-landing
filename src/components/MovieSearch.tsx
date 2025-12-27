@@ -10,7 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 // IMPORTANTE: Solo importamos el tipo, NO los datos
-import { Movie } from "@/data/movies";
+import type { Movie, Genre } from "@/data/movies";
 
 interface MovieSearchProps {
   movies: Movie[]; // Nueva prop para recibir las películas reales
@@ -51,7 +51,7 @@ export const MovieSearch = ({ movies, onFilteredMovies }: MovieSearchProps) => {
         movie.synopsis.toLowerCase().includes(searchQuery.toLowerCase());
 
       const matchesGenre =
-        selectedGenre === "all" || movie.genre.includes(selectedGenre);
+        selectedGenre === "all" || movie.genre.includes(selectedGenre as Genre);
 
       const matchesYear =
         selectedYear === "all" || movie.year.toString() === selectedYear;

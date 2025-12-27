@@ -22,6 +22,7 @@ import {
   posterUltimaCena,
   posterLosPajaros,
   posterEnTresYDos,
+  posterBellaAlhambra,
   posterCecilia,
   posterHombreExito,
   posterBrigadista,
@@ -305,6 +306,28 @@ const movies1980s: Movie[] = [
       { name: "Miguel Gutiérrez", role: "Néstor" }
     ],
     notes: "Ópera prima de Fernando Pérez que lo estableció como uno de los grandes directores cubanos."
+  },
+  {
+    id: "bella-alhambra",
+    title: "La bella del Alhambra",
+    year: 1989,
+    director: "Enrique Pineda Barnet",
+    poster: posterBellaAlhambra,
+    duration: "108 min",
+    genre: ["Drama", "Musical"],
+    synopsis: "La historia de Rachel, una joven mulata que sueña con convertirse en vedette del famoso teatro Alhambra de La Habana a principios del siglo XX. Una celebración del teatro vernáculo cubano y sus artistas legendarios.",
+    awards: [
+      { name: "Premio Goya", year: 1990, category: "Mejor Película Extranjera de Habla Hispana" },
+      { name: "Festival de La Habana", year: 1989, category: "Gran Premio Coral" }
+    ],
+    cast: [
+      { name: "Beatriz Valdés", role: "Rachel" },
+      { name: "César Évora", role: "Adolfo" },
+      { name: "Omar Valdés", role: "Federico" },
+      { name: "Carlos Cruz", role: "Personaje" },
+      { name: "Isabel Moreno", role: "Personaje" }
+    ],
+    notes: "Ganadora del primer Goya a Mejor Película Extranjera de Habla Hispana. Basada en la novela 'Canción de Rachel' de Miguel Barnet."
   },
   {
     id: "plaff",

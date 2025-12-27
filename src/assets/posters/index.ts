@@ -35,6 +35,9 @@ export { default as posterFresa } from "@/assets/poster-FresayChocolate.jpg";
 export { default as posterMadagascar } from "@/assets/posters/madagascar.jpg";
 export { default as posterElefanteBicicleta } from "@/assets/posters/el-elefante-y-la-bicicleta.jpg";
 export { default as posterListaEspera } from "@/assets/posters/lista-de-espera.jpg";
+export { default as posterGuantanamera } from "@/assets/posters/guantanamera.jpg";
+export { default as posterSePermuta } from "@/assets/posters/se-permuta.jpg";
+export { default as posterPapelesSecundarios } from "@/assets/posters/papeles-secundarios.jpg";
 
 // === DÉCADA DE 2000s ===
 export { default as posterSuite } from "@/assets/poster-SuiteHabana.jpg";

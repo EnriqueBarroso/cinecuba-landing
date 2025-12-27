@@ -40,7 +40,10 @@ import {
   posterCuernoAbundancia,
   posterChala,
   posterMarti,
-  posterMemoria
+  posterMemoria,
+  posterGuantanamera,
+  posterSePermuta,
+  posterPapelesSecundarios
 } from "@/assets/posters";
 
 // ============================================================================
@@ -441,7 +444,7 @@ const movies1980s: Movie[] = [
     title: "Papeles secundarios",
     year: 1989,
     director: "Orlando Rojas",
-    poster: "/placeholder.svg",
+    poster: posterPapelesSecundarios,
     duration: "95 min",
     genre: ["Drama"],
     synopsis: "Un grupo de actores de teatro enfrenta las dificultades de ensayar una obra mientras lidian con sus propios dramas personales. La película explora la relación entre el arte y la vida, y los sacrificios que implica la vocación artística en Cuba.",
@@ -460,7 +463,7 @@ const movies1980s: Movie[] = [
     title: "Se permuta",
     year: 1984,
     director: "Juan Carlos Tabío",
-    poster: "/placeholder.svg",
+    poster: posterSePermuta,
     duration: "100 min",
     genre: ["Comedia"],
     synopsis: "Gloria vive en un apartamento pequeño en Centro Habana y sueña con mudarse a un lugar mejor. A través de una cadena de permutas de viviendas, la película satiriza la burocracia y las aspiraciones de la clase media cubana.",
@@ -550,7 +553,7 @@ const movies1990s: Movie[] = [
     title: "Guantanamera",
     year: 1995,
     director: "Tomás Gutiérrez Alea, Juan Carlos Tabío",
-    poster: "/placeholder.svg",
+    poster: posterGuantanamera,
     duration: "101 min",
     genre: ["Comedia"],
     synopsis: "Un cortejo fúnebre atraviesa Cuba de punta a punta para trasladar el cadáver de la tía Yoyita desde Guantánamo hasta La Habana, enfrentando los absurdos de la burocracia cubana. Una sátira sobre la vida y la muerte en el Período Especial.",

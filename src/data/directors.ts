@@ -201,6 +201,20 @@ export const directors: Director[] = [
       "Premio de la Crítica FIPRESCI",
       "Premio Nacional de Cine de Cuba"
     ]
+  },
+  {
+    id: "enrique-pineda-barnet",
+    name: "Enrique Pineda Barnet",
+    birthYear: 1933,
+    deathYear: 2021,
+    nationality: "Cubano",
+    biography: "Enrique Pineda Barnet fue un destacado cineasta, guionista, poeta, actor y director cubano. Nacido en La Habana, debutó en el teatro a los cinco años y a los veinte ya había ganado el Premio Nacional de Literatura Hernández Catá. Fue fundador de la Sociedad Cultural Nuestro Tiempo junto a otros intelectuales cubanos. Su extensa carrera cinematográfica incluye obras fundamentales como 'La bella del Alhambra' (1989), que ganó el primer Premio Goya a Mejor Película Extranjera de Habla Hispana, 'Giselle' (1964), 'Mella' (1975) y 'La anunciación' (2008). Pineda Barnet era un artista multifacético que dominaba el teatro, la poesía, el cine y la música, dejando un legado invaluable en la cultura cubana.",
+    activeYears: "1960-2015",
+    awards: [
+      "Premio Goya por 'La bella del Alhambra' (1990)",
+      "Premio Nacional de Cine de Cuba",
+      "Premio Coral del Festival de La Habana"
+    ]
   }
 ];
 

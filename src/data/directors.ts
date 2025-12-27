@@ -6,6 +6,10 @@ import ernestoDaranasPhoto from "@/assets/directors/ernesto-daranas.jpg";
 import miguelCoyulaPhoto from "@/assets/directors/miguel-coyula.jpg";
 import octavioCortazarPhoto from "@/assets/directors/octavio-cortazar.jpg";
 import rolandoDiazPhoto from "@/assets/directors/rolando-diaz.jpg";
+import saraGomezPhoto from "@/assets/directors/sara-gomez.jpg";
+import julioGarciaEspinosaPhoto from "@/assets/directors/julio-garcia-espinosa.jpg";
+import manuelPerezParedesPhoto from "@/assets/directors/manuel-perez-paredes.jpg";
+import pastorVegaPhoto from "@/assets/directors/pastor-vega.jpg";
 
 export interface Director {
   id: string;
@@ -142,6 +146,7 @@ export const directors: Director[] = [
   {
     id: "sara-gomez",
     name: "Sara Gómez",
+    photo: saraGomezPhoto,
     birthYear: 1942,
     deathYear: 1974,
     nationality: "Cubana",
@@ -155,6 +160,7 @@ export const directors: Director[] = [
   {
     id: "julio-garcia-espinosa",
     name: "Julio García Espinosa",
+    photo: julioGarciaEspinosaPhoto,
     birthYear: 1926,
     deathYear: 2016,
     nationality: "Cubano",
@@ -169,6 +175,7 @@ export const directors: Director[] = [
   {
     id: "manuel-perez-paredes",
     name: "Manuel Pérez Paredes",
+    photo: manuelPerezParedesPhoto,
     birthYear: 1939,
     deathYear: 2025,
     nationality: "Cubano",
@@ -178,6 +185,21 @@ export const directors: Director[] = [
       "Premio Nacional de Cine de Cuba (2013)",
       "Premio Coral del Festival de La Habana",
       "Medalla Alejo Carpentier"
+    ]
+  },
+  {
+    id: "pastor-vega",
+    name: "Pastor Vega",
+    photo: pastorVegaPhoto,
+    birthYear: 1940,
+    deathYear: 2005,
+    nationality: "Cubano",
+    biography: "Pastor Vega Peña fue uno de los directores más influyentes del cine cubano, reconocido por su capacidad para abordar temas sociales con profundidad y sensibilidad. Nacido en Santiago de Cuba, se unió al ICAIC en los años 60 y desarrolló una carrera prolífica. Su película más célebre, 'Retrato de Teresa' (1979), marcó un hito en el cine cubano al abordar frontalmente el machismo y la doble moral en la sociedad cubana, generando un intenso debate nacional. La película fue un éxito de taquilla y recibió reconocimiento internacional. También dirigió 'Habanera' (1984) y 'Las profecías de Amanda' (1999). Vega estaba casado con la actriz Daisy Granados, protagonista de varias de sus películas. Su cine se caracterizó por un compromiso feminista y una mirada crítica hacia las contradicciones sociales.",
+    activeYears: "1965-2000",
+    awards: [
+      "Premio Coral del Festival de La Habana por 'Retrato de Teresa'",
+      "Premio de la Crítica FIPRESCI",
+      "Premio Nacional de Cine de Cuba"
     ]
   }
 ];

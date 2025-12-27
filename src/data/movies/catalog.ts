@@ -18,6 +18,8 @@ import {
   posterLucia,
   posterBurocrata,
   poster12Sillas,
+  posterDeCiertaManera,
+  posterRetratoTeresa,
   posterSobrevivientes,
   posterUltimaCena,
   posterLosPajaros,
@@ -135,6 +137,26 @@ const movies1960s: Movie[] = [
 
 const movies1970s: Movie[] = [
   {
+    id: "de-cierta-manera",
+    title: "De cierta manera",
+    year: 1974,
+    director: "Sara Gómez",
+    poster: posterDeCiertaManera,
+    duration: "73 min",
+    genre: ["Drama", "Documental"],
+    synopsis: "Una maestra de origen burgués comienza a trabajar en un barrio marginal de La Habana y se enamora de un obrero. La película mezcla ficción y documental para explorar las tensiones de clase, género y los desafíos de la transformación social revolucionaria.",
+    awards: [
+      { name: "Festival de Leipzig", year: 1977, category: "Mención Especial" }
+    ],
+    cast: [
+      { name: "Yolanda Cuéllar", role: "Yolanda" },
+      { name: "Mario Balmaseda", role: "Mario" },
+      { name: "Mario Limonta", role: "Humberto" },
+      { name: "Isaura Mendoza", role: "Personaje" }
+    ],
+    notes: "Primera y única película de ficción de Sara Gómez, la primera directora afrocubana. Terminada póstumamente por Tomás Gutiérrez Alea y Julio García Espinosa."
+  },
+  {
     id: "la-ultima-cena",
     title: "La última cena",
     year: 1976,
@@ -154,6 +176,27 @@ const movies1970s: Movie[] = [
       { name: "José Antonio Rodríguez", role: "Don Manuel" }
     ],
     notes: "Alegoría poderosa sobre la esclavitud y la hipocresía religiosa en la Cuba colonial."
+  },
+  {
+    id: "retrato-de-teresa",
+    title: "Retrato de Teresa",
+    year: 1979,
+    director: "Pastor Vega",
+    poster: posterRetratoTeresa,
+    duration: "103 min",
+    genre: ["Drama"],
+    synopsis: "Teresa es una trabajadora textil, esposa y madre que participa activamente en actividades culturales. Cuando su marido exige que abandone sus actividades para dedicarse exclusivamente al hogar, ella se niega, desencadenando un conflicto sobre los roles de género en la Cuba revolucionaria.",
+    awards: [
+      { name: "Festival de La Habana", year: 1979, category: "Gran Premio Coral" },
+      { name: "Festival de Karlovy Vary", year: 1980, category: "Premio del Público" }
+    ],
+    cast: [
+      { name: "Daisy Granados", role: "Teresa" },
+      { name: "Adolfo Llauradó", role: "Ramón" },
+      { name: "Alina Sánchez", role: "Personaje" },
+      { name: "Raúl Pomares", role: "Personaje" }
+    ],
+    notes: "Película emblemática del feminismo cubano. Generó un amplio debate nacional sobre la igualdad de género y la 'doble jornada' de la mujer trabajadora."
   },
   {
     id: "sobrevivientes",

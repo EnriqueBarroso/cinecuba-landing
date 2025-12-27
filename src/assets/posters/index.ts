@@ -13,6 +13,8 @@ export { default as posterBurocrata } from "@/assets/La-muerte-de-un-burocrata-p
 export { default as poster12Sillas } from "@/assets/12_sillas.jpg";
 
 // === DÉCADA DE 1970s ===
+export { default as posterDeCiertaManera } from "@/assets/posters/de-cierta-manera.jpg";
+export { default as posterRetratoTeresa } from "@/assets/posters/retrato-de-teresa.jpg";
 export { default as posterSobrevivientes } from "@/assets/sobrevivientes.jpg";
 export { default as posterUltimaCena } from "@/assets/posters/la-ultima-cena.jpg";
 
